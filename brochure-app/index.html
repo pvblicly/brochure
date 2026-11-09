@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pvblicly Weddings by Ian Rebuta</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#7A2433">
+<link rel="icon" type="image/png" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Pvblicly Weddings">
+<meta name="description" content="Wedding websites, free planning tools, gift registry, invitations and stationery by Pvblicly Weddings, designed by Ian Rebuta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5EEE8; --bg-2:#EDE2D9; --card:#FFFBF8; --ink:#231B1F; --ink-soft:#66575D; --line:rgba(35,27,31,.14);
+  --wine:#7A2433; --wine-2:#5C1826; --gold:#B48A45; --gold-soft:#E3C98F; --night:#1F1620;
+  --serif:"Cormorant Garamond",Garamond,"Times New Roman",serif;
+  --sans:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --script:"Pinyon Script","Snell Roundhand",cursive;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1B1418;--bg-2:#241A20;--card:#2A1F26;--ink:#F3E8E4;--ink-soft:#C3B0B5;--line:rgba(243,232,228,.14);--wine:#D9788A;--wine-2:#B85A6C;--gold:#D9B46A}
+}
+:root[data-theme="dark"]{--bg:#1B1418;--bg-2:#241A20;--card:#2A1F26;--ink:#F3E8E4;--ink-soft:#C3B0B5;--line:rgba(243,232,228,.14);--wine:#D9788A;--wine-2:#B85A6C;--gold:#D9B46A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:1.05rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+section{padding:clamp(80px,11vw,130px) 0}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:8px}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:.01em}
+.brand span{font-family:var(--script);font-size:1.5rem;color:var(--wine)}
+.brand small{font-family:var(--sans);font-size:.78rem;letter-spacing:.06em;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:420px){.brand small{display:none}}
+.signed{font-family:var(--script);font-size:clamp(1.8rem,4vw,2.3rem);color:var(--gold-soft);margin:28px 0 0;line-height:1.1}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{text-decoration:none;padding:8px 14px;border-radius:999px;color:var(--ink-soft);font-size:.95rem}
+.top nav a:hover{color:var(--ink)}
+.top nav a.cta{background:var(--wine);color:#FFF6F0}
+@media (max-width:1060px){.top nav a:not(.cta){display:none}}
+@media (max-width:400px){.get-app{padding:7px 10px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font-weight:500;text-decoration:none;border:1.5px solid transparent;transition:transform .3s,background .3s,color .3s;font-size:1rem;letter-spacing:.01em;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.wine{background:var(--wine);color:#FFF6F0}
+.btn.line{border-color:var(--ink);color:var(--ink)}
+.btn.gold{background:var(--gold-soft);color:#2A1E14}
+.btn.ghost{border-color:rgba(255,246,240,.5);color:#FFF6F0}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,80px) 0 clamp(70px,9vw,110px);overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font-family:var(--script);color:var(--wine);font-size:clamp(1.8rem,4vw,2.4rem);line-height:1;margin:0 0 10px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.9rem,6.6vw,5.4rem);line-height:.98;letter-spacing:-.015em;margin:0}
+.hero h1 em{font-style:italic;color:var(--wine)}
+.hero .lead{max-width:44ch;color:var(--ink-soft);font-size:clamp(1.05rem,1.6vw,1.2rem);margin:24px 0 32px;font-weight:300}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:36px;color:var(--ink-soft);font-size:.95rem}
+.hero-meta b{display:block;font-family:var(--serif);font-size:1.9rem;font-weight:500;color:var(--ink);line-height:1}
+.hero-art{position:relative;height:clamp(460px,52vw,620px)}
+.hero-art .phone{position:absolute;width:min(62%,280px)}
+.hero-art .p1{left:6%;top:6%;transform:rotate(-6deg);z-index:2;animation:bob 7s ease-in-out infinite}
+.hero-art .p2{right:2%;top:16%;transform:rotate(5deg);animation:bob 7s -3.5s ease-in-out infinite}
+@keyframes bob{50%{translate:0 -12px}}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--gold);opacity:.5}
+.ring.r1{width:520px;height:520px;right:-140px;top:-60px}
+.ring.r2{width:380px;height:380px;right:-70px;top:10px;opacity:.3}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr}.hero-art{height:clamp(420px,110vw,560px)}}
+
+/* phone frame */
+.phone{aspect-ratio:9/19;border-radius:38px;padding:9px;background:linear-gradient(145deg,#2C2428,#0E0A0C);box-shadow:0 40px 70px -24px rgba(40,15,25,.55),inset 0 0 0 1.5px rgba(255,255,255,.08)}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:#111;container-type:inline-size}
+.phone .scr::before{content:"";position:absolute;top:8px;left:50%;width:30%;height:16px;margin-left:-15%;border-radius:10px;background:#0B0809;z-index:9}
+.phone video{width:100%;height:100%;object-fit:cover}
+
+/* ---------- real screenshots, scrolling inside the phone ---------- */
+.slides{position:absolute;inset:0;display:flex;flex-direction:column;animation-iteration-count:infinite;animation-timing-function:linear}
+.slides img{flex:none;width:100%;height:100%;object-fit:cover;object-position:top}
+.phone:hover .slides{animation-play-state:paused}
+
+/* ---------- mini theme screens ---------- */
+/* Vieux Papier */
+.vp{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#E6D3AE,#C9B08A);display:grid;place-items:center;font-family:"IM Fell English",serif;color:#3A2A1C}
+.vp .sheet{width:78%;padding:20cqw 6cqw 16cqw;text-align:center;background:radial-gradient(ellipse,#F7EEDA 40%,#E7D5AE);box-shadow:0 8px 18px rgba(60,35,10,.3), inset 0 0 22px rgba(140,95,40,.35);transform:rotate(-2deg);position:relative;
+  clip-path:polygon(0 1%,8% 0,20% 1.2%,34% .3%,50% 1%,66% 0,80% 1.1%,92% .2%,100% 1%,99.4% 20%,100% 42%,99.2% 64%,100% 86%,99.5% 99%,88% 100%,70% 99%,52% 100%,34% 99.2%,16% 100%,0 99%,.6% 80%,0 58%,.8% 36%,0 16%)}
+.vp small{display:block;font-style:italic;font-size:4.4cqw;color:#6A5340}
+.vp .nm{font-family:var(--script);font-size:13cqw;line-height:1.1;margin:2cqw 0}
+.vp .nm i{display:block;font-family:"IM Fell English",serif;font-size:5cqw;color:#9A4430}
+.vp .dt{font-size:4.2cqw;letter-spacing:.04em;margin-top:3cqw}
+.vp .stamp{position:absolute;right:4cqw;top:4cqw;width:13cqw;height:16cqw;background:linear-gradient(160deg,#B8584A,#8E3A30);outline:1.5cqw dotted #F7EFDC;outline-offset:-1cqw}
+.vp .wax{position:absolute;left:50%;bottom:-7cqw;width:15cqw;height:15cqw;margin-left:-7.5cqw;border-radius:50%;background:radial-gradient(circle at 36% 30%,#B04A47,#7E2A22 55%,#4A140F);box-shadow:0 2cqw 3cqw rgba(40,10,5,.4)}
+.vp .sprig{position:absolute;left:-6cqw;top:12cqw;width:34cqw;color:#6F7A55;transform:rotate(-20deg)}
+
+/* Midnight Rosé */
+.mr{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 25%,#4B3657,#2A1F33 60%,#1B1322);display:grid;place-items:center;overflow:hidden}
+.mr .st{position:absolute;width:1cqw;height:1cqw;border-radius:50%;background:#fff;animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+.mr .from{position:absolute;top:20cqw;width:100%;text-align:center;font-family:var(--script);color:#F1D9A6;font-size:12cqw;line-height:1.1}
+.mr .from small{display:block;font-family:var(--serif);font-style:italic;font-size:4.6cqw;color:#D9C2C9}
+.mr .env{position:relative;width:74cqw;aspect-ratio:1.5;margin-top:22cqw;perspective:120cqw}
+.mr .back{position:absolute;inset:0;background:#CFA19B;border-radius:1cqw}
+.mr .letter{position:absolute;left:6%;right:6%;top:8%;height:84%;background:#FFFBF8;border-radius:.6cqw;display:grid;place-items:start center;padding-top:4cqw;
+  font-family:var(--script);color:#B08A3A;font-size:7cqw;animation:mrLetter 6s ease-in-out infinite}
+@keyframes mrLetter{0%,35%{transform:translateY(0)}50%,85%{transform:translateY(-55%)}100%{transform:translateY(0)}}
+.mr .front{position:absolute;inset:0;z-index:3}
+.mr .flap{position:absolute;left:0;right:0;top:0;height:60%;transform-origin:top;z-index:4;animation:mrFlap 6s ease-in-out infinite}
+@keyframes mrFlap{0%,15%{transform:rotateX(0);z-index:4}30%,88%{transform:rotateX(180deg);z-index:1}100%{transform:rotateX(0);z-index:4}}
+.mr .seal{position:absolute;left:50%;top:60%;width:17cqw;height:17cqw;transform:translate(-50%,-50%);z-index:5;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#A9424F,#6B2232);display:grid;place-items:center;color:#F2D79B;font-family:var(--script);font-size:7cqw;animation:mrSeal 6s infinite}
+@keyframes mrSeal{0%,10%{opacity:1;transform:translate(-50%,-50%) scale(1)}16%,90%{opacity:0;transform:translate(-50%,-50%) scale(1.4)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.mr .hint{position:absolute;bottom:18cqw;width:100%;text-align:center;color:#D9C2C9;font-family:var(--serif);font-style:italic;font-size:4.6cqw}
+
+/* Bespoke */
+.bs{position:absolute;inset:0;background:linear-gradient(160deg,#F6EEE6,#EADBCF);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4cqw;text-align:center;color:#231B1F;padding:0 10cqw}
+.bs .sw{display:flex;gap:2.4cqw}
+.bs .sw i{width:9cqw;height:9cqw;border-radius:50%;animation:swatch 4s ease-in-out infinite}
+.bs .sw i:nth-child(2){animation-delay:.3s}.bs .sw i:nth-child(3){animation-delay:.6s}.bs .sw i:nth-child(4){animation-delay:.9s}
+@keyframes swatch{50%{transform:translateY(-3cqw)}}
+.bs b{font-family:var(--script);font-weight:400;font-size:13cqw;line-height:1.1;color:var(--wine)}
+.bs span{font-family:var(--serif);font-style:italic;font-size:5cqw;color:#66575D}
+.bs .lines{width:70%;display:grid;gap:2.4cqw}
+.bs .lines i{height:1.6cqw;border-radius:2cqw;background:rgba(35,27,31,.12);animation:sketch 3s ease-in-out infinite;transform-origin:left}
+.bs .lines i:nth-child(2){width:80%;animation-delay:.4s}.bs .lines i:nth-child(3){width:60%;animation-delay:.8s}
+@keyframes sketch{0%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+
+/* marquee */
+.marquee{background:var(--night);color:#F1D9A6;overflow:hidden;padding:16px 0;border-block:1px solid rgba(241,217,166,.2)}
+.marquee .track{display:flex;gap:46px;width:max-content;animation:scroll 40s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.3rem;white-space:nowrap}
+.marquee .track span::after{content:"✦";margin-left:46px;color:var(--gold);font-style:normal;font-size:.9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* section heads */
+.shead{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:60px}
+.shead .eyebrow{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.shead h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1;margin:0;letter-spacing:-.01em}
+.shead p{margin:0;color:var(--ink-soft);max-width:46ch;font-weight:300;font-size:1.1rem}
+@media (max-width:760px){.shead{grid-template-columns:1fr}}
+
+/* themes lookbook */
+.theme{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,80px);align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+.theme:last-child{border-bottom:1px solid var(--line)}
+.theme.flip .stage{order:2}
+.stage{position:relative;display:grid;place-items:center;padding:30px 0}
+.stage .phone{width:min(78%,290px);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.theme:hover .stage .phone{transform:rotate(-2deg) translateY(-6px)}
+.stage .halo{position:absolute;width:90%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--h) 0%,transparent 68%);opacity:.55;z-index:-1}
+.theme .num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.15rem}
+.theme h3{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1;margin:6px 0 4px}
+.theme .mood{font-family:var(--script);color:var(--wine);font-size:1.7rem;margin:0 0 16px;line-height:1.2}
+.theme p{color:var(--ink-soft);max-width:54ch;margin:0 0 18px;font-weight:300;font-size:1.08rem}
+.theme .story{border-left:2px solid var(--gold);padding:4px 0 4px 16px;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink);margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.chips li{padding:6px 14px;border-radius:999px;border:1px solid var(--line);font-size:.92rem;background:var(--card)}
+.palette{display:flex;gap:8px;margin:0 0 26px}
+.palette i{width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+@media (max-width:860px){.theme{grid-template-columns:1fr}.theme.flip .stage{order:0}}
+
+/* features */
+.features{background:var(--bg-2)}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.f{background:var(--bg-2);padding:28px 24px;transition:background .4s}
+.f:hover{background:var(--card)}
+.f svg{width:30px;height:30px;color:var(--wine);margin-bottom:14px}
+.f h4{margin:0 0 4px;font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.2}
+.f p{margin:0;color:var(--ink-soft);font-size:.98rem;font-weight:300}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:28px;counter-reset:s}
+.step{position:relative;padding-top:64px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;font-family:var(--serif);font-size:4rem;line-height:1;color:var(--gold);font-style:italic}
+.step::after{content:"";position:absolute;top:28px;left:52px;right:0;height:1px;background:var(--line)}
+.step h4{margin:0 0 6px;font-family:var(--serif);font-weight:600;font-size:1.45rem}
+.step p{margin:0;color:var(--ink-soft);font-weight:300}
+
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px;align-items:stretch}
+.pack{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column}
+.pack.star{background:var(--night);color:#F3E8E4;border-color:var(--night);transform:translateY(-10px);box-shadow:0 30px 50px -24px rgba(31,22,32,.6)}
+.pack .tag{align-self:flex-start;font-size:.8rem;letter-spacing:.08em;padding:4px 12px;border-radius:999px;background:var(--gold-soft);color:#2A1E14;margin-bottom:14px}
+.pack h4{margin:0;font-family:var(--serif);font-weight:500;font-size:2rem}
+.pack .price{font-family:var(--serif);font-size:2.6rem;line-height:1.1;margin:8px 0 2px}
+.pack .pnote{color:var(--ink-soft);font-size:.92rem;margin:0 0 18px}
+.pack.star .pnote{color:#C3B0B5}
+.pack ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:10px;flex:1;align-content:start}
+.pack li{position:relative;padding-left:26px;font-weight:300}
+.pack li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:7px;border-left:2px solid var(--wine);border-bottom:2px solid var(--wine);transform:rotate(-45deg)}
+.pack.star li::before{border-color:var(--gold-soft)}
+.pack .btn{align-self:flex-start}
+.pack.star .btn.line{border-color:#F3E8E4;color:#F3E8E4}
+@media (max-width:980px){.pack.star{transform:none}}
+
+/* faq */
+.faq{max-width:780px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 2px;font-family:var(--serif);font-size:1.4rem;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--wine);position:relative;transition:transform .4s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--wine);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.faq .a{padding:0 2px 22px;color:var(--ink-soft);font-weight:300;animation:op .5s ease}
+@keyframes op{from{opacity:0;transform:translateY(-6px)}}
+
+/* contact */
+.contact{background:var(--night);color:#F3E8E4;text-align:center;position:relative;overflow:hidden}
+.contact .eyebrow{color:var(--gold-soft)}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;margin:0 auto;max-width:16ch}
+.contact p{color:#C3B0B5;max-width:46ch;margin:20px auto 32px;font-weight:300;font-size:1.1rem}
+.contact .btns{justify-content:center}
+.contact .seal{width:92px;height:92px;margin:0 auto 26px;border-radius:50%;background:radial-gradient(circle at 36% 30%,#B04A47,#7E2A22 55%,#4A140F);display:grid;place-items:center;color:#E8C886;font-family:var(--script);font-size:2.4rem;box-shadow:0 10px 24px rgba(0,0,0,.4);animation:sway 5s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(-8deg) scale(1.04)}}
+footer{padding:28px 0 calc(28px + env(safe-area-inset-bottom,0px));color:var(--ink-soft);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}
+/* ---------- everything-in-one-place hub ---------- */
+.hub{padding:clamp(60px,8vw,90px) 0 0}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.hub a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px 20px;transition:transform .35s,border-color .35s,box-shadow .35s}
+.hub a:hover{transform:translateY(-4px);border-color:var(--wine);box-shadow:0 18px 30px -20px rgba(122,36,51,.5)}
+.hub svg{width:30px;height:30px;color:var(--wine);margin-bottom:6px}
+.hub b{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.15}
+.hub span{color:var(--ink-soft);font-size:.95rem;font-weight:300}
+.hub em{margin-top:auto;padding-top:8px;font-style:normal;font-size:.88rem;color:var(--wine);font-weight:500}
+
+/* ---------- planning tools ---------- */
+.tools-box{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs button{flex:none;border:0;background:none;padding:10px 18px;border-radius:999px;font:inherit;font-size:.98rem;color:var(--ink-soft);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--wine);color:#FFF6F0}
+.panel{padding:clamp(20px,4vw,36px)}
+.panel[hidden]{display:none}
+.tool-top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.tool-top label{display:flex;flex-direction:column;gap:4px;font-size:.88rem;color:var(--ink-soft)}
+.field{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+.field:focus{outline:2px solid var(--gold);outline-offset:1px}
+.big-stat{font-family:var(--serif);font-size:2.2rem;line-height:1;font-weight:500}
+.big-stat small{display:block;font-family:var(--sans);font-size:.85rem;color:var(--ink-soft);font-weight:400;margin-top:4px}
+.bar{height:8px;border-radius:8px;background:var(--bg-2);overflow:hidden;margin:6px 0 22px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--wine),var(--gold));border-radius:8px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.phase{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--bg)}
+.phase.now{border-color:var(--wine);box-shadow:0 0 0 3px color-mix(in srgb,var(--wine) 18%,transparent)}
+.phase h4{margin:0 0 8px;font-family:var(--serif);font-size:1.3rem;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.phase h4 small{font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--wine)}
+.task{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer;font-size:.97rem;line-height:1.4}
+.task input{appearance:none;flex:none;width:20px;height:20px;margin:1px 0 0;border:1.5px solid var(--ink-soft);border-radius:6px;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.task input:checked{background:var(--wine);border-color:var(--wine)}
+.task input:checked::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.task input:checked+span{text-decoration:line-through;color:var(--ink-soft)}
+.note-local{margin:18px 0 0;font-size:.85rem;color:var(--ink-soft)}
+.budget-table{width:100%;border-collapse:collapse;font-size:.97rem}
+.budget-table th{font-weight:500;color:var(--ink-soft);font-size:.85rem;text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+.budget-table td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.budget-table td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.budget-table input{width:min(130px,100%);min-height:38px;padding:6px 10px}
+.budget-wrap{overflow-x:auto}
+.over{color:#B3261E}
+.guest-add{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.guest-add .field{flex:1 1 200px}
+.mini-btn{font:inherit;border:0;border-radius:999px;padding:10px 20px;min-height:44px;background:var(--wine);color:#FFF6F0;cursor:pointer;font-weight:500}
+.mini-btn.out{background:none;border:1px solid var(--line);color:var(--ink)}
+.counts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.counts span{padding:6px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.92rem}
+.guests{list-style:none;margin:0;padding:0;max-height:360px;overflow:auto;border-top:1px solid var(--line)}
+.guests li{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);font-size:.97rem}
+.guests li small{color:var(--ink-soft)}
+.guests select{min-height:36px;padding:4px 8px}
+.guests button{border:0;background:none;color:var(--ink-soft);cursor:pointer;font-size:1.2rem;width:36px;height:36px;border-radius:50%}
+.guests button:hover{background:var(--bg-2);color:var(--wine)}
+.empty{color:var(--ink-soft);font-style:italic;padding:14px 2px}
+
+/* ---------- registry ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.split ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:14px}
+.split li{display:flex;gap:14px;align-items:flex-start}
+.split li svg{flex:none;width:26px;height:26px;color:var(--wine);margin-top:2px}
+.split li b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.2}
+.split li span{color:var(--ink-soft);font-weight:300;font-size:.98rem}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.reg-card{max-width:400px;margin:0 auto;background:#FFFBF8;color:#231B1F;border-radius:22px;padding:26px 24px;box-shadow:0 30px 60px -28px rgba(60,20,30,.45);border:1px solid rgba(35,27,31,.08);transform:rotate(-1.5deg)}
+.reg-card h4{margin:0;text-align:center;font-family:var(--script);font-weight:400;font-size:2.4rem;color:#7A2433;line-height:1.1}
+.reg-card p.s{margin:0 0 18px;text-align:center;font-family:var(--serif);font-style:italic;color:#66575D}
+.reg-row{display:flex;gap:14px;align-items:center;padding:14px;border-radius:14px;background:#F5EEE8;margin-bottom:10px}
+.qr{flex:none;width:64px;height:64px;display:grid;grid-template-columns:repeat(9,1fr);gap:1px;padding:4px;background:#fff;border-radius:6px}
+.qr i{background:#231B1F;border-radius:1px}.qr i.o{background:transparent}
+.reg-row b{display:block;font-weight:500}
+.reg-row small{color:#66575D;font-size:.85rem}
+.fund .bar{margin:8px 0 2px;background:#E8DCD3}
+.wish{display:flex;justify-content:space-between;gap:10px;padding:9px 4px;border-bottom:1px dashed rgba(35,27,31,.15);font-size:.95rem}
+.wish em{font-style:normal;font-size:.8rem;padding:2px 10px;border-radius:999px;background:#E3C98F;color:#2A1E14}
+.wish em.open{background:none;border:1px solid rgba(35,27,31,.2);color:#66575D}
+.sample-tag{display:block;text-align:center;margin-top:12px;font-size:.78rem;color:#9A8B90;letter-spacing:.06em}
+
+/* ---------- invites & paper ---------- */
+.paper-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:18px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px;transition:transform .4s}
+.pcard:hover{transform:translateY(-4px) rotate(-1deg)}
+.pcard .art{height:120px;border-radius:10px;margin-bottom:14px;display:grid;place-items:center;background:var(--bg-2);position:relative;overflow:hidden}
+.pcard .art .sheet{background:#FFFBF8;box-shadow:0 8px 16px -8px rgba(60,20,30,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#7A2433;font-family:var(--script);text-align:center;line-height:1}
+.pcard .art .sheet i{display:block;height:2px;width:60%;background:rgba(35,27,31,.15);border-radius:2px}
+.pcard b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.2}
+.pcard span{color:var(--ink-soft);font-size:.92rem;font-weight:300}
+
+/* ---------- vendors ---------- */
+.vendors{background:var(--night);color:#F3E8E4}
+.vendors .shead h2{color:#F3E8E4}.vendors .shead p{color:#C3B0B5}.vendors .eyebrow{color:var(--gold-soft)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:10px;margin-bottom:34px}
+.vgrid div{border:1px solid rgba(243,232,228,.16);border-radius:14px;padding:16px;display:flex;gap:10px;align-items:center;font-size:.98rem;transition:background .3s}
+.vgrid div:hover{background:rgba(243,232,228,.06)}
+.vgrid svg{flex:none;width:22px;height:22px;color:var(--gold-soft)}
+.soon{display:inline-block;font-size:.8rem;letter-spacing:.1em;padding:5px 12px;border-radius:999px;border:1px solid var(--gold-soft);color:var(--gold-soft);margin-bottom:16px}
+.v-cta{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.v-cta > div{border-radius:18px;padding:24px;background:rgba(243,232,228,.06);border:1px solid rgba(243,232,228,.12)}
+.v-cta h4{margin:0 0 6px;font-family:var(--serif);font-size:1.5rem;font-weight:500}
+.v-cta p{margin:0 0 16px;color:#C3B0B5;font-weight:300}
+@media (max-width:760px){.v-cta{grid-template-columns:1fr}}
+
+/* ---------- add-ons ---------- */
+.addons{margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 30px}
+.addons h4{margin:0 0 4px;font-family:var(--serif);font-size:1.7rem;font-weight:500}
+.addons > p{margin:0 0 18px;color:var(--ink-soft);font-weight:300}
+.addon-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px 26px;list-style:none;margin:0;padding:0}
+.addon-list li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-weight:300}
+.addon-list li em{font-style:normal;color:var(--wine);font-weight:500;white-space:nowrap;font-size:.92rem}
+
+
+/* ---------- get the app ---------- */
+.get-app{font:inherit;font-size:.92rem;border:1.5px solid var(--wine);color:var(--wine);background:none;border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.get-app svg{width:16px;height:16px}
+.get-app:hover{background:var(--wine);color:#FFF6F0}
+.app-band{padding:clamp(60px,8vw,90px) 0}
+.app-card{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:linear-gradient(120deg,var(--night),#3A2230);color:#F3E8E4;border-radius:26px;padding:clamp(24px,4vw,40px)}
+.app-card img{width:92px;height:92px;border-radius:22px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.app-card h3{margin:0 0 6px;font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.4vw,2.4rem);line-height:1.05}
+.app-card p{margin:0;color:#C3B0B5;font-weight:300;max-width:52ch}
+.app-card ul{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.app-card li{font-size:.85rem;padding:4px 12px;border-radius:999px;border:1px solid rgba(243,232,228,.2)}
+@media (max-width:760px){.app-card{grid-template-columns:1fr;text-align:left}.app-card img{width:72px;height:72px}}
+.sheet-modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-end;justify-content:center;background:rgba(20,12,16,.55);padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.sheet-modal.show{display:flex}
+@media (min-width:700px){.sheet-modal{align-items:center}}
+.sheet-box{background:var(--card);color:var(--ink);border-radius:22px;max-width:440px;width:100%;padding:26px 24px 22px;box-shadow:0 30px 60px rgba(0,0,0,.35);animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{transform:translateY(30px);opacity:0}}
+.sheet-box header{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.sheet-box header img{width:52px;height:52px;border-radius:13px}
+.sheet-box h4{margin:0;font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.1}
+.sheet-box header small{color:var(--ink-soft)}
+.sheet-box ol{margin:0 0 18px;padding-left:22px;display:grid;gap:10px}
+.sheet-box ol svg{width:18px;height:18px;vertical-align:-4px;color:var(--wine)}
+.sheet-box .row{display:flex;justify-content:flex-end}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--night);color:#F3E8E4;padding:12px 20px;border-radius:999px;z-index:70;transition:transform .4s;font-size:.95rem}
+.toast.show{transform:translate(-50%,0)}
+@media (display-mode:standalone){.get-app,.app-band{display:none!important}}
+.get-app[hidden],.app-band[hidden]{display:none}
+.top nav a,.top nav button{white-space:nowrap}
+.top nav a{padding:8px 11px}
+.ga-short{display:none}
+@media (max-width:1180px){.top nav a:not(.cta){display:none}}
+@media (max-width:520px){.ga-full{display:none}.ga-short{display:inline}.top nav a.cta{padding:8px 13px}.brand b{font-size:1.25rem}.brand span{font-size:1.3rem}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Pvblicly Weddings by Ian Rebuta"><b>Pvblicly</b><span>weddings</span><small>by Ian Rebuta</small></a>
+    <nav><a href="#themes">Websites</a><a href="#tools">Planning tools</a><a href="#registry">Registry</a><a href="#paper">Invites</a><a href="#vendors">Vendors</a><a href="#packages">Packages</a><button class="get-app" id="getApp" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="ga-full">Get the app</span><span class="ga-short">App</span></button><a class="cta" href="#contact">Book a call</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <span class="ring r1"></span><span class="ring r2"></span>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow rv">Pvblicly Weddings by Ian Rebuta</p>
+        <h1 class="rv d1">Invitations your guests <em>open</em> like a love letter.</h1>
+        <p class="lead rv d2">Cinematic wedding websites, free planning tools, a gift registry and matching stationery, made for the Filipino wedding. Your kasal and everything in between, all in one place.</p>
+        <div class="btns rv d2"><a class="btn wine" href="#themes">See the themes</a><a class="btn line" href="#packages">View packages</a></div>
+        <div class="hero-meta rv d2"><div><b id="themeCount">2</b>signature themes</div><div><b>1</b>link to share</div><div><b id="fromPrice">₱1,999</b>starting price</div></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="phone p1"><div class="scr" data-screen="vp-video"></div></div>
+        <div class="phone p2"><div class="scr" data-screen="shots-mr"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
+
+  <section class="hub" id="start">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Para sa inyong kasal</p><h2 class="rv d1">Everything in between</h2></div>
+        <p class="rv d1">From the pamamanhikan to the money dance: your website, planning, gifts and paper, designed together for a Filipino wedding.</p>
+      </div>
+      <div class="hub-grid" id="hubGrid"></div>
+    </div>
+  </section>
+
+  <section id="themes">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Ang koleksyon</p><h2 class="rv d1">Choose your theme</h2></div>
+        <p class="rv d1">Each theme is a complete wedding website. Tap "View live demo" to open it exactly as your guests would.</p>
+      </div>
+      <div id="themeList"></div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Libreng planning tools</p><h2 class="rv d1">Plan it all, right here</h2></div>
+        <p class="rv d1">A checklist made for Filipino weddings, a peso budget planner and a guest list for your ninong, ninang and guests. Free, and saved on your own phone or computer.</p>
+      </div>
+      <div class="tools-box rv">
+        <div class="tabs" role="tablist" aria-label="Planning tools">
+          <button role="tab" aria-selected="true" aria-controls="p-check" id="t-check">Checklist</button>
+          <button role="tab" aria-selected="false" aria-controls="p-budget" id="t-budget">Budget planner</button>
+          <button role="tab" aria-selected="false" aria-controls="p-guests" id="t-guests">Guest list</button>
+        </div>
+        <div class="panel" id="p-check" role="tabpanel" aria-labelledby="t-check">
+          <div class="tool-top">
+            <label>Your wedding date<input type="date" class="field" id="wDate"></label>
+            <div class="big-stat" id="daysLeft">—<small>days to go</small></div>
+            <div class="big-stat" id="doneStat">0%<small>of tasks done</small></div>
+          </div>
+          <div class="bar"><i id="checkBar" style="width:0%"></i></div>
+          <div class="phases" id="phases"></div>
+          <p class="note-local">Saved on this device only. Add your date and the phase you're in gets highlighted. Requirements can differ by parish and city, so always check with your parish office and Local Civil Registrar.</p>
+        </div>
+        <div class="panel" id="p-budget" role="tabpanel" aria-labelledby="t-budget" hidden>
+          <div class="tool-top">
+            <label>Total budget (₱)<input type="number" min="0" step="1000" inputmode="numeric" class="field" id="bTotal" placeholder="e.g. 300000"></label>
+            <div class="big-stat" id="bSpent">₱0<small>spent so far</small></div>
+            <div class="big-stat" id="bLeft">₱0<small>left to spend</small></div>
+          </div>
+          <div class="bar"><i id="budgetBar" style="width:0%"></i></div>
+          <div class="budget-wrap"><table class="budget-table"><thead><tr><th>Category</th><th>Suggested</th><th>Plan (₱)</th><th>Spent (₱)</th></tr></thead><tbody id="bRows"></tbody></table></div>
+          <p class="note-local">The suggested split is a starting point, not a rule. Every family is different, so change the plan for any category to match your priorities.</p>
+        </div>
+        <div class="panel" id="p-guests" role="tabpanel" aria-labelledby="t-guests" hidden>
+          <div class="guest-add">
+            <input class="field" id="gName" placeholder="Guest name" aria-label="Guest name">
+            <select class="field" id="gSide" aria-label="Side"><option>Bride's side</option><option>Groom's side</option><option>Both</option></select>
+            <select class="field" id="gRole" aria-label="Role"><option>Guest</option><option>Principal sponsor</option><option>Secondary sponsor</option><option>Entourage</option><option>Family</option></select>
+            <button class="mini-btn" id="gAdd">Add guest</button>
+            <button class="mini-btn out" id="gExport">Download list</button>
+          </div>
+          <div class="counts" id="gCounts"></div>
+          <ul class="guests" id="gList"></ul>
+          <p class="note-local">Saved on this device only. "Download list" gives you a spreadsheet file you can share with your coordinator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-band" id="app">
+    <div class="wrap">
+      <div class="app-card rv">
+        <img src="icons/icon-192.png" alt="Pvblicly Weddings app icon">
+        <div>
+          <h3>Take your wedding planning with you</h3>
+          <p>Install Pvblicly Weddings on your phone or computer. It opens like an app from your home screen, keeps your checklist, budget and guest list, and works even without signal.</p>
+          <ul><li>No app store needed</li><li>Free</li><li>Works offline</li><li>iPhone, Android &amp; computer</li></ul>
+        </div>
+        <button class="btn gold" id="getApp2" type="button">Get the app</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="registry" style="background:var(--bg-2)">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow rv">Mga regalo</p>
+        <h2 class="rv d1" style="font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;margin:0 0 18px">Gifts, made easy for your guests</h2>
+        <p class="rv d1" style="color:var(--ink-soft);font-weight:300;font-size:1.1rem;margin:0 0 26px">A registry page inside your wedding website, so when guests ask "Ano ang gusto ninyong regalo?" they get a beautiful answer.</p>
+        <ul class="rv d2" id="regList"></ul>
+        <a class="btn wine rv d2" href="#contact">Add a registry</a>
+      </div>
+      <div class="rv d1"><div class="reg-card" aria-label="Sample registry page">
+        <h4>Our Gift Registry</h4><p class="s">Salamat sa inyong pagmamahal</p>
+        <div class="reg-row"><div class="qr" id="qr"></div><div><b>Cash gift</b><small>Scan with GCash, Maya or your bank app</small></div></div>
+        <div class="reg-row fund" style="display:block"><b>Bahay fund</b><div class="bar"><i style="width:62%"></i></div><small>62% of our goal</small></div>
+        <div class="wish"><span>Rice cooker</span><em>Gifted</em></div>
+        <div class="wish"><span>Stand fan</span><em class="open">Available</em></div>
+        <div class="wish"><span>Dinnerware set for 8</span><em class="open">Available</em></div>
+        <span class="sample-tag">SAMPLE REGISTRY PAGE</span>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="paper">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Imbitasyon at papel</p><h2 class="rv d1">Stationery that matches your website</h2></div>
+        <p class="rv d1">Digital and print-ready pieces in the same theme as your wedding website, from the save-the-date and sponsor invitations to the missal and giveaway tags.</p>
+      </div>
+      <div class="paper-grid" id="paperGrid"></div>
+    </div>
+  </section>
+
+  <section id="vendors" class="vendors">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Mga supplier</p><h2 class="rv d1">Build your wedding team</h2></div>
+        <div><span class="soon rv">COMING SOON</span><p class="rv d1">A directory of trusted wedding suppliers in Bohol and across the Visayas, from churches and caterers to lights and sounds.</p></div>
+      </div>
+      <div class="vgrid rv" id="vGrid"></div>
+      <div class="v-cta">
+        <div class="rv"><h4>Planning a wedding?</h4><p>Tell me what you still need, and I'll point you to suppliers that fit your style and budget.</p><a class="btn gold" href="#contact">Ask for recommendations</a></div>
+        <div class="rv d1"><h4>Are you a wedding supplier?</h4><p>Get listed in the directory when it launches and reach couples who are actively planning.</p><a class="btn ghost" href="#contact">Join the directory</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Kasama na</p><h2 class="rv d1">Everything your guests need</h2></div>
+        <p class="rv d1">Every theme comes with these sections, filled in with your own details.</p>
+      </div>
+      <div class="fgrid rv" id="featureGrid"></div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Paano ito gumagana</p><h2 class="rv d1">From "yes" to shared link</h2></div>
+        <p class="rv d1">You send the details, I build the site, and you share one link with every guest.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><h4>Pick a theme</h4><p>Choose from the collection, or ask for a bespoke design made just for you.</p></div>
+        <div class="step rv d1"><h4>Send your details</h4><p>Names, date, venues, entourage, program, photos, and the song you'd like playing.</p></div>
+        <div class="step rv d2"><h4>Preview &amp; refine</h4><p>You get a private preview link to check on your phone and request changes.</p></div>
+        <div class="step rv d2"><h4>Share with guests</h4><p>Send the link over Messenger, Viber, email, or print it as a QR code on your invites.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Mga package</p><h2 class="rv d1">Simple, clear pricing</h2></div>
+        <p class="rv d1">Start with a ready theme, or go all the way to a design that exists only for your wedding.</p>
+      </div>
+      <div class="packs" id="packList"></div>
+      <div class="addons rv"><h4>Add-ons</h4><p>Pair any package with these, priced to your needs.</p><ul class="addon-list" id="addonList"></ul></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="shead" style="margin-bottom:40px">
+        <div><p class="eyebrow rv">Mga tanong</p><h2 class="rv d1">Good to know</h2></div>
+        <p class="rv d1">Can't find your answer? Book a quick call and ask me directly.</p>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="seal rv" aria-hidden="true">IR</div>
+      <p class="eyebrow rv">Tara, simulan na natin</p>
+      <h2 class="rv d1">Let's make your invitation unforgettable.</h2>
+      <p class="rv d1">Kumusta! I'm Ian Rebuta from Bohol, the designer behind every Pvblicly wedding website. Tell me your date and the theme you love, and I'll walk you through the next steps personally.</p>
+      <div class="btns rv d2" id="contactBtns"></div>
+      <p class="signed rv d2">Ian Rebuta</p>
+    </div>
+  </section>
+</main>
+
+<div class="sheet-modal" id="installSheet" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+  <div class="sheet-box">
+    <header><img src="icons/icon-192.png" alt=""><div><h4 id="installTitle">Add to your home screen</h4><small>Pvblicly Weddings, free</small></div></header>
+    <ol id="installSteps"></ol>
+    <div class="row"><button class="btn line" id="installClose" type="button" style="min-height:44px">Got it</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<footer><div class="wrap"><span id="footL"></span><span>Every theme is designed and built by hand.</span></div></footer>
+
+<script>
+/* =========================================================
+   EDIT HERE — links, prices and themes
+   ========================================================= */
+const BRAND = {
+  name: "Pvblicly",
+  designer: "Ian Rebuta",
+  booking: "https://calendly.com/ianrebuta/30min",
+  messenger: "",      // e.g. "https://m.me/yourpage"
+  email: "",          // e.g. "hello@yourdomain.com"
+  fromPrice: "₱1,999",
+  videoSrc: "vieux-papier-intro.mp4",  // the Vieux Papier opening video, kept next to this file
+  // real phone screenshots of each theme (in the shots folder), shown scrolling inside the phone previews
+  shots: {
+    vp: ["shots/vp-01.jpg","shots/vp-02.jpg","shots/vp-03.jpg","shots/vp-04.jpg","shots/vp-05.jpg","shots/vp-06.jpg","shots/vp-07.jpg","shots/vp-08.jpg","shots/vp-09.jpg"],
+    mr: ["shots/mr-01.jpg","shots/mr-02.jpg","shots/mr-03.jpg","shots/mr-04.jpg","shots/mr-05.jpg","shots/mr-06.jpg","shots/mr-07.jpg","shots/mr-08.jpg"]
+  }
+};
+
+const THEMES = [
+  {
+    key: "vp", screen: "shots-vp", name: "Vieux Papier", mood: "old paper, kept forever",
+    halo: "rgba(201,165,122,.7)",
+    text: "A cinematic opening: guests tap the wax seal, real hands open the envelope, and a burst of light gives way to an aged-paper love letter. Names are written in by quill, postcards flip over, the program types itself out, and gift notes arrive by telegram.",
+    story: "Inspired by Vieux Papier, a Filipino-made perfume by GP Fragrances. The name is French for “old paper.”",
+    palette: ["#F2E6CC","#B48F65","#9A4430","#6F7A55","#3A2A1C"],
+    chips: ["Video envelope opening","Tap-the-seal button","Quill-written names","Flip postcards","Typewriter program","Telegram gift note","Tear-off countdown"],
+    demo: "https://amfufy.github.io/vieux-papier/"
+  },
+  {
+    key: "mr", screen: "shots-mr", name: "Midnight Rosé", mood: "starlit, soft and golden",
+    halo: "rgba(122,74,104,.6)",
+    text: "A blush envelope floats on a starry night sky. Guests break the wax seal, the flap folds back, and the letter unrolls like a scroll between two gold rods. Inside, rose petals drift over a gold church-arch hero and a live countdown.",
+    story: "Made for couples who want something romantic, glowing and timeless.",
+    palette: ["#2A1F33","#EFD3CF","#A9636C","#C8A253","#FBF4F1"],
+    chips: ["Animated envelope opening","Scroll-unroll letter","Falling petals","Gold arch hero","Story timeline","Music box melody"],
+    demo: "https://amfufy.github.io/elise-and-gab/"
+  },
+  {
+    key: "bs", screen: "bs", name: "Bespoke", mood: "designed only for you",
+    halo: "rgba(217,120,138,.45)",
+    text: "Bring me anything you love, like a scent, a song, a place or a film, and I'll turn it into a theme that exists only for your wedding. Your own colors, your own opening, your own story.",
+    story: "Vieux Papier started exactly this way: from a single bottle of perfume.",
+    palette: ["#F6EEE6","#D9788A","#7A2433","#B48A45","#231B1F"],
+    chips: ["One-of-a-kind design","Custom opening animation","Your colors & typography","Built from your inspiration"],
+    demo: ""
+  }
+];
+
+const FEATURES = [
+  ["seal","A grand opening","An envelope your guests break open before the site appears."],
+  ["clock","Live countdown","Days, hours, minutes and seconds to your vows."],
+  ["heart","Your love story","A timeline of the chapters that led you here, with photos."],
+  ["pin","Venues & maps","Ceremony and reception details with one-tap directions."],
+  ["dress","Attire guide","Dress code and your color palette, so everyone matches."],
+  ["list","Program","The order of the day, from arrival to send-off."],
+  ["people","Entourage & sponsors","Ninong at ninang, candle, veil and cord sponsors, bearers and your whole entourage."],
+  ["help","FAQs, reminders & gifts","Answers to what every guest asks, plus a kind note on gifts and the money dance."],
+  ["mail","RSVP","A reply button linked to your own RSVP form."],
+  ["photo","Photo gallery","Your favorite photos in an album guests can tap through."],
+  ["music","Background music","Your song, or a soft music-box melody, playing as they scroll."],
+  ["phone","Made for phones","Designed first for the screens your guests actually use."]
+];
+
+const HUB = [
+  ["phone","Wedding website","Cinematic themes with RSVP, countdown, entourage and more.","#themes","See themes"],
+  ["list","Planning tools","Free checklist, budget planner and guest list.","#tools","Start planning"],
+  ["gift","Gift registry","Cash gifts, a honeymoon fund and a wishlist in one page.","#registry","See registry"],
+  ["mail","Invites & paper","Save-the-dates, invitations and stationery that match.","#paper","See stationery"],
+  ["people","Vendors","Find your wedding team in Bohol and nearby.","#vendors","Coming soon"]
+];
+
+const CHECKLIST = [
+  { phase:"12 months or more", from:12, tasks:["Hold the pamamanhikan with both families","Agree on your total budget together","Reserve your church or ceremony date (popular parishes book up early)","Book your reception venue","Draft your guest list, including both families' must-invites","Choose your wedding website theme"] },
+  { phase:"9 to 12 months", from:9, tasks:["Book your coordinator","Book your photo and video team (ask about a same-day edit)","Book your caterer and taste the menu","Choose your principal sponsors (ninong at ninang)","Choose your secondary sponsors: candle, veil and cord","Start your gown and barong search"] },
+  { phase:"6 to 9 months", from:6, tasks:["Request new baptismal and confirmation certificates \"for marriage purposes\"","Sign up for your pre-Cana seminar and canonical interview (Catholic weddings)","Book hair and makeup","Book your florist or stylist","Book lights and sounds, your host and the choir or band","Send save-the-dates and launch your wedding website"] },
+  { phase:"4 to 6 months", from:4, tasks:["Get your PSA birth certificates and CENOMAR","Attend the pre-marriage counseling required for your license","Personally invite your ninong at ninang, with a sponsor invitation","Order invitations, the missal and giveaways","Finalize your entourage and their attire","Plan your gift registry"] },
+  { phase:"2 to 3 months", from:2, tasks:["Apply for your marriage license at the Local Civil Registrar","Submit documents to your parish so the banns can be posted","Send out your invitations","Have your final gown and barong fittings","Plan the program with your host, including the money dance","Prepare the arrhae, rings, veil, cord, candles and Bible","Book the bridal car"] },
+  { phase:"1 month", from:1, tasks:["Follow up on RSVPs","Finalize the seating plan","Confirm every supplier and their balances","Celebrate your despedida de soltera and de soltero","Practice your first dance","Update your website with final details"] },
+  { phase:"The week of", from:0, tasks:["Give the final headcount to your caterer","Prepare envelopes for supplier balances and the church fee","Bring your marriage license and documents to the parish","Pack your wedding-day kit","Rest, pray, and enjoy every moment"] }
+];
+
+const BUDGET = [
+  ["Reception venue & catering",40],["Church & ceremony fees",4],["Photo & video (with SDE)",12],["Coordinator",4],
+  ["Gown, barong & entourage attire",7],["Hair & makeup",3],["Flowers & styling",8],["Lights, sounds & host",5],
+  ["Cake",2],["Invitations, website & giveaways",4],["Rings & arrhae",4],["Bridal car",1],["Documents & seminars",1],["Extra & emergencies",5]
+];
+
+const REGISTRY = [
+  ["gift","Cash gifts by QR","Guests scan your GCash, Maya or bank QR right from your website, perfect for titos and titas abroad."],
+  ["heart","Bahay or honeymoon fund","Share a goal and a progress bar you can update as gifts come in."],
+  ["list","Wishlist from any store","List the items you'd love, from Shopee, Lazada or the mall, and mark them as gifted."],
+  ["mail","A kind note on gifts","A gentle message about gifts, sobres and the money dance, written exactly how you want to say it."]
+];
+
+const PAPER = [
+  ["Digital save-the-date","Animated, ready for Messenger, Viber and Facebook","std"],
+  ["Wedding invitation","Print-ready, with your entourage and a QR to your website","inv"],
+  ["Sponsor invitation","A special card for your ninong at ninang","spon"],
+  ["RSVP card","Matching reply card or QR to your form","rsvp"],
+  ["Wedding missal","Your ceremony and Mass program, beautifully set","prog"],
+  ["Menu cards","For each table or each place setting","menu"],
+  ["Place cards & table numbers","Guide every guest to their seat","place"],
+  ["Giveaway tags","Thank-you tags for your souvenirs","tag"],
+  ["Welcome signage","Entrance signs, seating charts and more","sign"],
+  ["Thank-you cards","Digital or printed, to send after the day","ty"]
+];
+
+const VENDORS = [
+  ["pin","Churches & venues"],["list","Coordinators"],["photo","Photo & video (SDE)"],["dinner","Caterers & lechon"],
+  ["dress","Hair & makeup"],["dress","Gowns & barong"],["heart","Florists & stylists"],["music","Lights & sounds"],
+  ["people","Hosts & emcees"],["music","Choirs & bands"],["cake","Cakes & desserts"],["seal","Mobile bar & photobooth"],
+  ["pin","Bridal cars"],["gift","Souvenirs & giveaways"]
+];
+
+const ADDONS = [
+  ["Gift registry page","quoted"],["Digital save-the-date","quoted"],["Printed invitations with QR","quoted"],
+  ["Sponsor invitations","quoted"],["Wedding missal & stationery suite","quoted"],["Filipino or Bisaya version of your website","quoted"],
+  ["Own domain name","quoted"]
+];
+
+const PACKAGES = [
+  { name: "Essential", price: BRAND.fromPrice, note: "starting price", tag: "",
+    items: ["Your choice of any ready theme",
+            "Personalized with your names, date, venues and full entourage",
+            "Your own photos in your love story and album",
+            "Program, attire guide, FAQs and reminders, in your words",
+            "RSVP button linked to your own form",
+            "Background music as guests scroll",
+            "A private preview link so you can review everything first",
+            "One shareable link for every guest"], cta: "Book a call" },
+  { name: "Signature", price: "Custom quote", note: "priced to your wishlist", tag: "MOST LOVED",
+    items: ["Everything in Essential",
+            "Your own song playing as guests open the invitation",
+            "Colors and details tuned to your motif",
+            "Extra sections you'd love to add",
+            "A QR code for your printed invitations"], cta: "Ask for a quote" },
+  { name: "Bespoke", price: "Let's talk", note: "a theme made only for you", tag: "",
+    items: ["Everything in Signature",
+            "A brand-new theme designed around your inspiration",
+            "Your own custom opening animation",
+            "Unique illustrations and details no one else has"], cta: "Start a bespoke design" }
+];
+
+const FAQS = [
+  ["Is the website really personalized for us?","Completely. Your names, story, photos, venues, entourage and every detail are yours. A ready theme is only the starting look; the content is all about you."],
+  ["Can we list our ninong, ninang and the whole entourage?","Yes. Principal sponsors, secondary sponsors for the candle, veil and cord, the arrhae, ring and Bible bearers, flower girls, everyone has a place, just like in a printed Filipino invitation."],
+  ["Will it work for lolo and lola?","Yes. Guests just tap one link from Messenger, Viber or a text, then tap the seal. No app or account is needed, and the text is large and easy to read on phones."],
+  ["Can guests RSVP on the website?","Yes. The RSVP button opens your own RSVP form, so every reply lands in one place for you and your coordinator."],
+  ["Can it be in Filipino or Bisaya?","Yes, as an add-on. Your website can be in English, Filipino or Bisaya, or have a second version so every guest feels at home."],
+  ["Can we put a QR code on our printed invitations?","Yes. Guests scan the QR on your invitation and land straight on your wedding website."],
+  ["Can we update details after it's shared?","Yes. If the venue, program or any detail changes, the website can be updated and the same link keeps working."],
+  ["Will our own photos be on the website?","Yes, in every package. Your prenup and favorite photos fill your love story and album. Your own song comes with Signature."],
+  ["Can I get a theme no one else has?","That's the Bespoke package. Tell me what inspires you and I'll design a theme just for your wedding."]
+];
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+const $=s=>document.querySelector(s);
+const ICON = {
+  seal:'<circle cx="12" cy="12" r="7"/><path d="M12 2.5l1.6 2.2 2.6-.7.5 2.6 2.5 1-.9 2.5 1.7 2-2 1.7.9 2.5-2.6.9-.5 2.6-2.6-.7L12 21.5l-1.6-2.2-2.6.7-.5-2.6-2.5-1 .9-2.5L4 12l2-1.7-.9-2.5 2.6-.9.5-2.6 2.6.7z" opacity=".5"/>',
+  clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',
+  pin:'<path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  dress:'<path d="M9 3h6l-1 4 5 14H5l5-14z"/>',
+  list:'<path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/>',
+  people:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.6-3.4 2.8-5.2 5.5-5.2s4.9 1.8 5.5 5.2M14.5 15c2.6-.8 5.2.6 6 4"/>',
+  help:'<circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .8-1 1.5v.6M12 16.6v.1"/>',
+  mail:'<rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+  gift:'<rect x="3.5" y="9" width="17" height="11" rx="1"/><path d="M3.5 13h17M12 9v11M12 9C10 5 6.5 5.5 7.5 8 8 9 12 9 12 9zM12 9c2-4 5.5-3.5 4.5-1C16 9 12 9 12 9z"/>',
+  photo:'<rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/>',
+  music:'<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>'
+};
+ICON.dinner = '<circle cx="12.5" cy="12" r="5"/><path d="M4 4v5a1.5 1.5 0 0 0 3 0V4M5.5 9v11M20.5 4c-2 1.5-2 6 0 7.5V20"/>';
+ICON.cake = '<path d="M5 12h14v8H5zM7 12V9h10v3M12 9V6M5 16c2 1.5 4 1.5 7 0s5-1.5 7 0"/><path d="M12 3.5v.5"/>';
+const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
+
+const SPRIG = '<svg class="sprig" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 112 C50 86 100 60 194 14"/><path d="M40 92c-6-14-2-26 10-32 4 14 0 26-10 32z" fill="currentColor" fill-opacity=".3"/><path d="M78 72c-4-15 2-27 14-31 2 15-4 27-14 31z" fill="currentColor" fill-opacity=".3"/><path d="M118 52c-2-15 6-26 18-28 0 15-8 26-18 28z" fill="currentColor" fill-opacity=".3"/><circle cx="165" cy="28" r="6"/><circle cx="178" cy="22" r="5"/></svg>';
+const SCREENS = {
+  "vp-video": () => `<video src="${BRAND.videoSrc}" autoplay muted loop playsinline preload="metadata"></video>`,
+  "vp": () => `<div class="vp">${SPRIG}<div class="sheet"><span class="stamp"></span><small>Together with their families</small><div class="nm">Elise<i>and</i>Gabriel</div><div class="dt">THE TWELFTH OF DECEMBER</div><span class="wax"></span></div></div>`,
+  "mr": () => { let st=""; for(let i=0;i<22;i++) st+=`<i class="st" style="left:${(i*37)%100}%;top:${(i*53)%100}%;animation-delay:${(i%7)*.3}s;opacity:${.3+(i%4)*.2}"></i>`;
+    return `<div class="mr">${st}<div class="from"><small>A letter has arrived from</small>Elise &amp; Gabriel</div>
+      <div class="env"><div class="back"></div><div class="letter">You're invited</div>
+      <svg class="front" viewBox="0 0 300 200" preserveAspectRatio="none"><polygon points="0,0 154,114 0,200" fill="#E4BAB4"/><polygon points="300,0 146,114 300,200" fill="#E4BAB4"/><polygon points="0,200 150,96 300,200" fill="#EECDC8"/></svg>
+      <svg class="flap" viewBox="0 0 300 120" preserveAspectRatio="none"><polygon points="0,0 300,0 150,120" fill="#DDB1AB"/></svg><span class="seal">EG</span></div>
+      <div class="hint">Tap the seal to open</div></div>`; },
+  "bs": () => `<div class="bs"><div class="sw"><i style="background:#D9788A"></i><i style="background:#7A2433"></i><i style="background:#B48A45"></i><i style="background:#8E9A78"></i></div><b>Your theme</b><span>inspired by what you love</span><div class="lines"><i></i><i></i><i></i></div></div>`
+};
+const madeKF = {};
+function slideshow(list, alt){
+  const n = list.length, hold = 2.6, move = .9, dur = n*(hold+move);
+  if(!madeKF[n]){
+    let k = ""; const seg = 100/n, h = seg*hold/(hold+move);
+    for(let i=0;i<n;i++){ k += `${(i*seg).toFixed(3)}%{transform:translateY(-${i*100}%)}${(i*seg+h).toFixed(3)}%{transform:translateY(-${i*100}%)}`; }
+    k += `100%{transform:translateY(-${n*100}%)}`;
+    document.head.insertAdjacentHTML("beforeend", `<style>@keyframes sl${n}{${k}}</style>`);
+    madeKF[n]=true;
+  }
+  const imgs = [...list, list[0]].map((src,i)=>`<img src="${src}" alt="${i===0?alt:''}" ${i>1?'loading="lazy"':''}>`).join("");
+  return `<div class="slides" style="animation-name:sl${n};animation-duration:${dur}s;animation-timing-function:cubic-bezier(.6,0,.3,1)">${imgs}</div>`;
+}
+SCREENS["shots-vp"] = () => slideshow(BRAND.shots.vp, "Vieux Papier theme on a phone");
+SCREENS["shots-mr"] = () => slideshow(BRAND.shots.mr, "Midnight Rosé theme on a phone");
+function fill(scope=document){
+  scope.querySelectorAll("[data-screen]").forEach(s=>{
+    s.innerHTML = SCREENS[s.dataset.screen]();
+    const v = s.querySelector("video");
+    if(v) v.addEventListener("error", ()=>{ s.innerHTML = SCREENS.vp(); });   // no video? show the illustrated letter
+  });
+}
+
+$("#themeCount").textContent = THEMES.filter(t=>t.demo).length;
+$("#fromPrice").textContent = BRAND.fromPrice;
+const mq = ["Wedding websites","Ninong at ninang","Filipino wedding checklist","Peso budget planner","Guest list","GCash gift registry","Sponsor invitations","Wedding missal","Supplier directory","One link para sa lahat"];
+$("#marquee").innerHTML = [...mq,...mq].map(t=>`<span>${t}</span>`).join("");
+
+$("#themeList").innerHTML = THEMES.map((t,i)=>`
+  <article class="theme ${i%2?'flip':''}" id="theme-${t.key}">
+    <div class="stage rv"><span class="halo" style="--h:${t.halo}"></span><div class="phone"><div class="scr" data-screen="${t.screen}"></div></div></div>
+    <div class="rv d1">
+      <span class="num">${t.demo ? "Theme no. "+(i+1) : "Made to order"}</span>
+      <h3>${t.name}</h3><p class="mood">${t.mood}</p>
+      <p>${t.text}</p>
+      <p class="story">${t.story}</p>
+      <div class="palette" aria-label="Color palette">${t.palette.map(c=>`<i style="background:${c}"></i>`).join("")}</div>
+      <ul class="chips">${t.chips.map(c=>`<li>${c}</li>`).join("")}</ul>
+      <div class="btns">
+        ${t.demo?`<a class="btn wine" href="${t.demo}" target="_blank" rel="noopener">View live demo</a>`:""}
+        <a class="btn line" href="#contact" data-theme="${t.name}">${t.demo?"I want this theme":"Start a bespoke design"}</a>
+      </div>
+    </div>
+  </article>`).join("");
+
+$("#featureGrid").innerHTML = FEATURES.map(([k,h,p])=>`<div class="f">${svg(k)}<h4>${h}</h4><p>${p}</p></div>`).join("");
+
+$("#packList").innerHTML = PACKAGES.map((p,i)=>`
+  <div class="pack rv ${p.tag?'star':''} ${i?'d'+Math.min(i,2):''}">
+    ${p.tag?`<span class="tag">${p.tag}</span>`:""}
+    <h4>${p.name}</h4><div class="price">${p.price}</div><p class="pnote">${p.note}</p>
+    <ul>${p.items.map(x=>`<li>${x}</li>`).join("")}</ul>
+    <a class="btn ${p.tag?'gold':'line'}" href="#contact">${p.cta}</a>
+  </div>`).join("");
+
+$("#faqList").innerHTML = FAQS.map(([q,a])=>`<details class="rv"><summary>${q}<i aria-hidden="true"></i></summary><div class="a">${a}</div></details>`).join("");
+
+const cb=[];
+if(BRAND.booking) cb.push(`<a class="btn gold" href="${BRAND.booking}" target="_blank" rel="noopener">Book a free call</a>`);
+if(BRAND.messenger) cb.push(`<a class="btn ghost" href="${BRAND.messenger}" target="_blank" rel="noopener">Message on Facebook</a>`);
+if(BRAND.email) cb.push(`<a class="btn ghost" href="mailto:${BRAND.email}">Email me</a>`);
+$("#contactBtns").innerHTML = cb.join("");
+$("#footL").textContent = `© ${new Date().getFullYear()} ${BRAND.name} Weddings by ${BRAND.designer}`;
+
+
+/* ---------- hub, registry, paper, vendors, add-ons ---------- */
+$("#hubGrid").innerHTML = HUB.map(([k,t,d,h,c],i)=>`<a class="rv ${i?'d'+Math.min(i,2):''}" href="${h}">${svg(k)}<b>${t}</b><span>${d}</span><em>${c}</em></a>`).join("");
+$("#regList").innerHTML = REGISTRY.map(([k,t,d])=>`<li>${svg(k)}<div><b>${t}</b><span>${d}</span></div></li>`).join("");
+(()=>{ const on="111111101100100111101000101101111101011000110100110101101101001110010111111101101";
+  $("#qr").innerHTML=[...on].map(b=>`<i class="${b==='1'?'':'o'}"></i>`).join(""); })();
+const PAPER_ART = {
+  std:'<div class="sheet" style="width:62%;height:70%;font-size:1.5rem;transform:rotate(-4deg)">Save<br>the date<i></i></div>',
+  inv:'<div class="sheet" style="width:46%;height:86%;font-size:1.3rem">E &amp; G<i></i><i></i><span style="width:18px;height:18px;background:#231B1F;opacity:.8;margin-top:4px"></span></div>',
+  rsvp:'<div class="sheet" style="width:66%;height:56%;font-size:1.2rem;transform:rotate(3deg)">Kindly reply<i></i></div>',
+  prog:'<div class="sheet" style="width:40%;height:88%;font-size:1rem">Program<i></i><i></i><i></i><i></i></div>',
+  menu:'<div class="sheet" style="width:34%;height:88%;font-size:1rem;transform:rotate(-3deg)">Menu<i></i><i></i><i></i></div>',
+  place:'<div class="sheet" style="width:44%;height:34%;font-size:1rem;transform:rotate(-6deg) translate(-20px,-14px)">Maria</div><div class="sheet" style="position:absolute;width:30%;height:44%;font-size:1.6rem;transform:rotate(5deg) translate(34px,10px)">12</div>',
+  spon:'<div class="sheet" style="width:58%;height:72%;font-size:1.15rem">Ninong<br>&amp; Ninang<i></i></div>',
+  tag:'<div class="sheet" style="width:38%;height:56%;font-size:1.05rem;clip-path:polygon(22% 0,78% 0,100% 18%,100% 100%,0 100%,0 18%);transform:rotate(-8deg)">Salamat<i></i></div>',
+  sign:'<div class="sheet" style="width:50%;height:84%;font-size:1.3rem;border-top:6px solid #B48A45">Welcome<i></i></div>',
+  ty:'<div class="sheet" style="width:60%;height:62%;font-size:1.4rem;transform:rotate(-2deg)">Thank you<i></i></div>'
+};
+$("#paperGrid").innerHTML = PAPER.map(([t,d,a],i)=>`<div class="pcard rv ${i%4?'d'+Math.min(i%4,2):''}"><div class="art">${PAPER_ART[a]}</div><b>${t}</b><span>${d}</span></div>`).join("");
+$("#vGrid").innerHTML = VENDORS.map(([k,t])=>`<div>${svg(k)}${t}</div>`).join("");
+$("#addonList").innerHTML = ADDONS.map(([t,p])=>`<li>${t}<em>${p==="quoted"?"Quoted on request":p}</em></li>`).join("");
+
+/* ---------- planning tools (saved in this browser only) ---------- */
+const store = {
+  get(k,d){ try{ const v=localStorage.getItem("pvw-"+k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },
+  set(k,v){ try{ localStorage.setItem("pvw-"+k, JSON.stringify(v)); }catch(e){} }
+};
+const peso = n => "₱" + Math.round(n||0).toLocaleString("en-PH");
+
+// tabs
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+tabs.forEach(t=>t.addEventListener("click",()=>{
+  tabs.forEach(x=>{ const on=x===t; x.setAttribute("aria-selected",on); document.getElementById(x.getAttribute("aria-controls")).hidden=!on; });
+}));
+
+// checklist
+let done = store.get("done",{});
+const wDate=$("#wDate"); wDate.value = store.get("date","");
+function renderChecklist(){
+  let months=null, days=null;
+  if(wDate.value){ const d=new Date(wDate.value+"T00:00:00"); days=Math.ceil((d-new Date())/86400000); months=days/30.4; }
+  $("#daysLeft").innerHTML = (days==null?"—":Math.max(0,days).toLocaleString())+"<small>days to go</small>";
+  let nowIdx=-1;
+  if(months!=null){ nowIdx = CHECKLIST.findIndex(p=> months>=p.from); if(nowIdx<0) nowIdx=CHECKLIST.length-1; }
+  $("#phases").innerHTML = CHECKLIST.map((p,pi)=>{
+    const n=p.tasks.filter((_,ti)=>done[pi+"-"+ti]).length;
+    return `<div class="phase ${pi===nowIdx?'now':''}"><h4>${p.phase}<small>${pi===nowIdx?'You are here · ':''}${n}/${p.tasks.length}</small></h4>
+      ${p.tasks.map((t,ti)=>`<label class="task"><input type="checkbox" data-k="${pi}-${ti}" ${done[pi+"-"+ti]?"checked":""}><span>${t}</span></label>`).join("")}</div>`;
+  }).join("");
+  const total=CHECKLIST.reduce((a,p)=>a+p.tasks.length,0), n=Object.values(done).filter(Boolean).length;
+  const pct=Math.round(n/total*100); $("#doneStat").innerHTML=pct+"%<small>of tasks done</small>"; $("#checkBar").style.width=pct+"%";
+}
+$("#phases").addEventListener("change",e=>{ if(e.target.dataset.k){ done[e.target.dataset.k]=e.target.checked; store.set("done",done); renderChecklist(); } });
+wDate.addEventListener("change",()=>{ store.set("date",wDate.value); renderChecklist(); });
+renderChecklist();
+
+// budget
+let bud = store.get("budget",{ total:"", plan:{}, spent:{} });
+$("#bTotal").value = bud.total;
+function renderBudget(){
+  const total=+bud.total||0;
+  $("#bRows").innerHTML = BUDGET.map(([c,pc],i)=>{
+    const sug=total*pc/100, plan=bud.plan[i]!==undefined&&bud.plan[i]!==""?+bud.plan[i]:sug, sp=+bud.spent[i]||0;
+    return `<tr><td>${c}</td><td class="n">${pc}% · ${peso(sug)}</td>
+      <td><input class="field" type="number" min="0" inputmode="numeric" data-t="plan" data-i="${i}" value="${bud.plan[i]??""}" placeholder="${Math.round(sug)}" aria-label="${c} plan"></td>
+      <td><input class="field ${sp>plan&&plan>0?'over':''}" type="number" min="0" inputmode="numeric" data-t="spent" data-i="${i}" value="${bud.spent[i]??""}" placeholder="0" aria-label="${c} spent"></td></tr>`;
+  }).join("");
+  updateBudgetStats();
+}
+function updateBudgetStats(){
+  const total=+bud.total||0, spent=Object.values(bud.spent).reduce((a,v)=>a+(+v||0),0);
+  $("#bSpent").innerHTML=peso(spent)+"<small>spent so far</small>";
+  $("#bLeft").innerHTML=`<span class="${total&&spent>total?'over':''}">${peso(total-spent)}</span><small>left to spend</small>`;
+  $("#budgetBar").style.width=(total?Math.min(100,spent/total*100):0)+"%";
+}
+$("#bTotal").addEventListener("input",e=>{ bud.total=e.target.value; store.set("budget",bud); renderBudget(); });
+$("#bRows").addEventListener("input",e=>{ const t=e.target.dataset.t; if(!t) return; bud[t][e.target.dataset.i]=e.target.value; store.set("budget",bud); updateBudgetStats(); });
+$("#bRows").addEventListener("change",()=>renderBudget());
+renderBudget();
+
+// guest list
+let guests = store.get("guests",[]);
+function renderGuests(){
+  const c = s => guests.filter(g=>g.rsvp===s).length;
+  const side = v => guests.filter(g=>(g.side||"").startsWith(v)).length, role = v => guests.filter(g=>g.role===v).length;
+  $("#gCounts").innerHTML = `<span>${guests.length} guests</span><span>${c("Attending")} attending</span><span>${c("Pending")} pending</span><span>${c("Declined")} declined</span><span>${role("Principal sponsor")} ninong &amp; ninang</span><span>${role("Secondary sponsor")} secondary sponsors</span><span>Bride ${side("Bride")} · Groom ${side("Groom")} · Both ${side("Both")}</span>`;
+  $("#gList").innerHTML = guests.length ? guests.map((g,i)=>`<li><span>${g.name.replace(/</g,"&lt;")}</span><small>${g.side}${g.role&&g.role!=="Guest"?" · "+g.role:""}</small>
+    <select class="field" data-i="${i}" aria-label="RSVP for ${g.name.replace(/"/g,"")}">${["Pending","Attending","Declined"].map(o=>`<option ${o===g.rsvp?"selected":""}>${o}</option>`).join("")}</select>
+    <button data-del="${i}" aria-label="Remove ${g.name.replace(/"/g,"")}">×</button></li>`).join("") : `<li class="empty">No guests yet. Add your first one above.</li>`;
+}
+function addGuest(){ const n=$("#gName").value.trim(); if(!n) return; guests.push({name:n,side:$("#gSide").value,role:$("#gRole").value,rsvp:"Pending"}); store.set("guests",guests); $("#gName").value=""; $("#gName").focus(); renderGuests(); }
+$("#gAdd").addEventListener("click",addGuest);
+$("#gName").addEventListener("keydown",e=>{ if(e.key==="Enter") addGuest(); });
+$("#gList").addEventListener("change",e=>{ if(e.target.dataset.i){ guests[e.target.dataset.i].rsvp=e.target.value; store.set("guests",guests); renderGuests(); } });
+$("#gList").addEventListener("click",e=>{ const d=e.target.dataset.del; if(d!==undefined){ guests.splice(+d,1); store.set("guests",guests); renderGuests(); } });
+$("#gExport").addEventListener("click",()=>{
+  const rows=[["Name","Side","Role","RSVP"],...guests.map(g=>[g.name,g.side,g.role||"Guest",g.rsvp])].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([rows],{type:"text/csv"})); a.download="guest-list.csv"; document.body.appendChild(a); a.click(); a.remove();
+});
+renderGuests();
+
+
+/* ---------- install as an app (PWA) ---------- */
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+(()=>{
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+  const btns = [$("#getApp"), $("#getApp2")];
+  if (standalone) { btns.forEach(b=>b.hidden=true); $("#app").hidden=true; return; }
+  let deferred = null;
+  addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred = e; });
+  const ua = navigator.userAgent;
+  const iOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const share = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11v9h12v-9"/></svg>';
+  const plus = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></svg>';
+  const dots = '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>';
+  function steps(){
+    if (iOS && !/safari/i.test(ua.replace(/crios|fxios|edgios/ig,"x")) ) return [`Open this page in <b>Safari</b>.`, `Tap the Share button ${share}.`, `Choose <b>Add to Home Screen</b> ${plus}, then tap <b>Add</b>.`];
+    if (iOS) return [`Tap the Share button ${share} at the bottom of Safari.`, `Scroll down and choose <b>Add to Home Screen</b> ${plus}.`, `Tap <b>Add</b>. The app appears on your home screen.`];
+    if (/android/i.test(ua)) return [`Open your browser menu ${dots}.`, `Tap <b>Install app</b> or <b>Add to Home screen</b>.`, `Confirm, and the app appears on your home screen.`];
+    return [`Look for the install icon at the right end of your browser's address bar.`, `Or open the browser menu ${dots} and choose <b>Install Pvblicly Weddings</b>.`, `It opens in its own window, like any app on your computer.`];
+  }
+  const sheet = $("#installSheet");
+  function openSheet(){ $("#installSteps").innerHTML = steps().map(s=>`<li>${s}</li>`).join(""); sheet.classList.add("show"); $("#installClose").focus(); }
+  function closeSheet(){ sheet.classList.remove("show"); }
+  $("#installClose").addEventListener("click", closeSheet);
+  sheet.addEventListener("click", e => { if (e.target === sheet) closeSheet(); });
+  addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+  async function install(){
+    if (deferred) { deferred.prompt(); const r = await deferred.userChoice; deferred = null; if (r.outcome === "accepted") return; }
+    else openSheet();
+  }
+  btns.forEach(b => b.addEventListener("click", install));
+  addEventListener("appinstalled", () => {
+    btns.forEach(b=>b.hidden=true); $("#app").hidden=true;
+    const t=$("#toast"); t.textContent="Installed! Find Pvblicly Weddings on your home screen 💌"; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),4000);
+  });
+})();
+
+fill();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

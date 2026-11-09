@@ -1,0 +1,22 @@
+{
+  "name": "Pvblicly Weddings by Ian Rebuta",
+  "short_name": "Pvblicly Weddings",
+  "description": "Wedding websites, a Filipino wedding checklist, peso budget planner, guest list, gift registry and stationery by Pvblicly Weddings.",
+  "id": "./",
+  "start_url": "./?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5EEE8",
+  "theme_color": "#7A2433",
+  "categories": ["lifestyle", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Wedding checklist", "short_name": "Checklist", "url": "./?source=app#tools", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Themes", "url": "./?source=app#themes", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Packages", "url": "./?source=app#packages", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
