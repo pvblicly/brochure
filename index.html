@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wedding Websites by Pvblicly</title>
-<meta name="description" content="Cinematic wedding websites your guests open like a love letter. Themes, features and packages by Pvblicly.">
+<title>Pvblicly Weddings by Ian Rebuta</title>
+<meta name="description" content="Cinematic wedding websites your guests open like a love letter. Themes, features and packages by Pvblicly Weddings, designed by Ian Rebuta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
@@ -38,6 +38,9 @@ section{padding:clamp(80px,11vw,130px) 0}
 .brand{text-decoration:none;display:flex;align-items:baseline;gap:8px}
 .brand b{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:.01em}
 .brand span{font-family:var(--script);font-size:1.5rem;color:var(--wine)}
+.brand small{font-family:var(--sans);font-size:.78rem;letter-spacing:.06em;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:420px){.brand small{display:none}}
+.signed{font-family:var(--script);font-size:clamp(1.8rem,4vw,2.3rem);color:var(--gold-soft);margin:28px 0 0;line-height:1.1}
 .top nav{display:flex;gap:4px;align-items:center}
 .top nav a{text-decoration:none;padding:8px 14px;border-radius:999px;color:var(--ink-soft);font-size:.95rem}
 .top nav a:hover{color:var(--ink)}
@@ -226,7 +229,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><b>Pvblicly</b><span>weddings</span></a>
+    <a class="brand" href="#top" aria-label="Pvblicly Weddings by Ian Rebuta"><b>Pvblicly</b><span>weddings</span><small>by Ian Rebuta</small></a>
     <nav><a href="#themes">Themes</a><a href="#features">Inclusions</a><a href="#packages">Packages</a><a href="#faq">FAQ</a><a class="cta" href="#contact">Book a call</a></nav>
   </div>
 </header>
@@ -236,7 +239,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <span class="ring r1"></span><span class="ring r2"></span>
     <div class="wrap">
       <div>
-        <p class="eyebrow rv">Wedding websites</p>
+        <p class="eyebrow rv">Pvblicly Weddings by Ian Rebuta</p>
         <h1 class="rv d1">Invitations your guests <em>open</em> like a love letter.</h1>
         <p class="lead rv d2">Cinematic wedding websites with an envelope you break open, a story you scroll through, and every detail your guests need, all in one link.</p>
         <div class="btns rv d2"><a class="btn wine" href="#themes">See the themes</a><a class="btn line" href="#packages">View packages</a></div>
@@ -308,11 +311,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <div class="seal rv" aria-hidden="true">P</div>
+      <div class="seal rv" aria-hidden="true">IR</div>
       <p class="eyebrow rv">Let's begin</p>
       <h2 class="rv d1">Let's make your invitation unforgettable.</h2>
-      <p class="rv d1">Tell me your date and the theme you love. I'll walk you through the next steps.</p>
+      <p class="rv d1">Hi, I'm Ian Rebuta, the designer behind every Pvblicly wedding website. Tell me your date and the theme you love, and I'll walk you through the next steps personally.</p>
       <div class="btns rv d2" id="contactBtns"></div>
+      <p class="signed rv d2">Ian Rebuta</p>
     </div>
   </section>
 </main>
@@ -325,6 +329,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
    ========================================================= */
 const BRAND = {
   name: "Pvblicly",
+  designer: "Ian Rebuta",
   booking: "https://calendly.com/ianrebuta/30min",
   messenger: "",      // e.g. "https://m.me/yourpage"
   email: "",          // e.g. "hello@yourdomain.com"
@@ -510,7 +515,7 @@ if(BRAND.booking) cb.push(`<a class="btn gold" href="${BRAND.booking}" target="_
 if(BRAND.messenger) cb.push(`<a class="btn ghost" href="${BRAND.messenger}" target="_blank" rel="noopener">Message on Facebook</a>`);
 if(BRAND.email) cb.push(`<a class="btn ghost" href="mailto:${BRAND.email}">Email me</a>`);
 $("#contactBtns").innerHTML = cb.join("");
-$("#footL").textContent = `© ${new Date().getFullYear()} ${BRAND.name} Weddings`;
+$("#footL").textContent = `© ${new Date().getFullYear()} ${BRAND.name} Weddings by ${BRAND.designer}`;
 
 fill();
 
