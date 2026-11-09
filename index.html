@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pvblicly Weddings by Ian Rebuta</title>
-<meta name="description" content="Cinematic wedding websites your guests open like a love letter. Themes, features and packages by Pvblicly Weddings, designed by Ian Rebuta.">
+<meta name="description" content="Wedding websites, free planning tools, gift registry, invitations and stationery by Pvblicly Weddings, designed by Ian Rebuta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@ section{padding:clamp(80px,11vw,130px) 0}
 .top nav a{text-decoration:none;padding:8px 14px;border-radius:999px;color:var(--ink-soft);font-size:.95rem}
 .top nav a:hover{color:var(--ink)}
 .top nav a.cta{background:var(--wine);color:#FFF6F0}
-@media (max-width:720px){.top nav a:not(.cta){display:none}}
+@media (max-width:1060px){.top nav a:not(.cta){display:none}}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font-weight:500;text-decoration:none;border:1.5px solid transparent;transition:transform .3s,background .3s,color .3s;font-size:1rem;letter-spacing:.01em;cursor:pointer}
 .btn:hover{transform:translateY(-2px)}
@@ -222,6 +222,117 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}
+/* ---------- everything-in-one-place hub ---------- */
+.hub{padding:clamp(60px,8vw,90px) 0 0}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.hub a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px 20px;transition:transform .35s,border-color .35s,box-shadow .35s}
+.hub a:hover{transform:translateY(-4px);border-color:var(--wine);box-shadow:0 18px 30px -20px rgba(122,36,51,.5)}
+.hub svg{width:30px;height:30px;color:var(--wine);margin-bottom:6px}
+.hub b{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1.15}
+.hub span{color:var(--ink-soft);font-size:.95rem;font-weight:300}
+.hub em{margin-top:auto;padding-top:8px;font-style:normal;font-size:.88rem;color:var(--wine);font-weight:500}
+
+/* ---------- planning tools ---------- */
+.tools-box{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs button{flex:none;border:0;background:none;padding:10px 18px;border-radius:999px;font:inherit;font-size:.98rem;color:var(--ink-soft);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--wine);color:#FFF6F0}
+.panel{padding:clamp(20px,4vw,36px)}
+.panel[hidden]{display:none}
+.tool-top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.tool-top label{display:flex;flex-direction:column;gap:4px;font-size:.88rem;color:var(--ink-soft)}
+.field{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+.field:focus{outline:2px solid var(--gold);outline-offset:1px}
+.big-stat{font-family:var(--serif);font-size:2.2rem;line-height:1;font-weight:500}
+.big-stat small{display:block;font-family:var(--sans);font-size:.85rem;color:var(--ink-soft);font-weight:400;margin-top:4px}
+.bar{height:8px;border-radius:8px;background:var(--bg-2);overflow:hidden;margin:6px 0 22px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--wine),var(--gold));border-radius:8px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.phase{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--bg)}
+.phase.now{border-color:var(--wine);box-shadow:0 0 0 3px color-mix(in srgb,var(--wine) 18%,transparent)}
+.phase h4{margin:0 0 8px;font-family:var(--serif);font-size:1.3rem;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.phase h4 small{font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--wine)}
+.task{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer;font-size:.97rem;line-height:1.4}
+.task input{appearance:none;flex:none;width:20px;height:20px;margin:1px 0 0;border:1.5px solid var(--ink-soft);border-radius:6px;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.task input:checked{background:var(--wine);border-color:var(--wine)}
+.task input:checked::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.task input:checked+span{text-decoration:line-through;color:var(--ink-soft)}
+.note-local{margin:18px 0 0;font-size:.85rem;color:var(--ink-soft)}
+.budget-table{width:100%;border-collapse:collapse;font-size:.97rem}
+.budget-table th{font-weight:500;color:var(--ink-soft);font-size:.85rem;text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+.budget-table td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.budget-table td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.budget-table input{width:min(130px,100%);min-height:38px;padding:6px 10px}
+.budget-wrap{overflow-x:auto}
+.over{color:#B3261E}
+.guest-add{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.guest-add .field{flex:1 1 200px}
+.mini-btn{font:inherit;border:0;border-radius:999px;padding:10px 20px;min-height:44px;background:var(--wine);color:#FFF6F0;cursor:pointer;font-weight:500}
+.mini-btn.out{background:none;border:1px solid var(--line);color:var(--ink)}
+.counts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.counts span{padding:6px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.92rem}
+.guests{list-style:none;margin:0;padding:0;max-height:360px;overflow:auto;border-top:1px solid var(--line)}
+.guests li{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);font-size:.97rem}
+.guests li small{color:var(--ink-soft)}
+.guests select{min-height:36px;padding:4px 8px}
+.guests button{border:0;background:none;color:var(--ink-soft);cursor:pointer;font-size:1.2rem;width:36px;height:36px;border-radius:50%}
+.guests button:hover{background:var(--bg-2);color:var(--wine)}
+.empty{color:var(--ink-soft);font-style:italic;padding:14px 2px}
+
+/* ---------- registry ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.split ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:14px}
+.split li{display:flex;gap:14px;align-items:flex-start}
+.split li svg{flex:none;width:26px;height:26px;color:var(--wine);margin-top:2px}
+.split li b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.2}
+.split li span{color:var(--ink-soft);font-weight:300;font-size:.98rem}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.reg-card{max-width:400px;margin:0 auto;background:#FFFBF8;color:#231B1F;border-radius:22px;padding:26px 24px;box-shadow:0 30px 60px -28px rgba(60,20,30,.45);border:1px solid rgba(35,27,31,.08);transform:rotate(-1.5deg)}
+.reg-card h4{margin:0;text-align:center;font-family:var(--script);font-weight:400;font-size:2.4rem;color:#7A2433;line-height:1.1}
+.reg-card p.s{margin:0 0 18px;text-align:center;font-family:var(--serif);font-style:italic;color:#66575D}
+.reg-row{display:flex;gap:14px;align-items:center;padding:14px;border-radius:14px;background:#F5EEE8;margin-bottom:10px}
+.qr{flex:none;width:64px;height:64px;display:grid;grid-template-columns:repeat(9,1fr);gap:1px;padding:4px;background:#fff;border-radius:6px}
+.qr i{background:#231B1F;border-radius:1px}.qr i.o{background:transparent}
+.reg-row b{display:block;font-weight:500}
+.reg-row small{color:#66575D;font-size:.85rem}
+.fund .bar{margin:8px 0 2px;background:#E8DCD3}
+.wish{display:flex;justify-content:space-between;gap:10px;padding:9px 4px;border-bottom:1px dashed rgba(35,27,31,.15);font-size:.95rem}
+.wish em{font-style:normal;font-size:.8rem;padding:2px 10px;border-radius:999px;background:#E3C98F;color:#2A1E14}
+.wish em.open{background:none;border:1px solid rgba(35,27,31,.2);color:#66575D}
+.sample-tag{display:block;text-align:center;margin-top:12px;font-size:.78rem;color:#9A8B90;letter-spacing:.06em}
+
+/* ---------- invites & paper ---------- */
+.paper-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:18px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px;transition:transform .4s}
+.pcard:hover{transform:translateY(-4px) rotate(-1deg)}
+.pcard .art{height:120px;border-radius:10px;margin-bottom:14px;display:grid;place-items:center;background:var(--bg-2);position:relative;overflow:hidden}
+.pcard .art .sheet{background:#FFFBF8;box-shadow:0 8px 16px -8px rgba(60,20,30,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#7A2433;font-family:var(--script);text-align:center;line-height:1}
+.pcard .art .sheet i{display:block;height:2px;width:60%;background:rgba(35,27,31,.15);border-radius:2px}
+.pcard b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.2}
+.pcard span{color:var(--ink-soft);font-size:.92rem;font-weight:300}
+
+/* ---------- vendors ---------- */
+.vendors{background:var(--night);color:#F3E8E4}
+.vendors .shead h2{color:#F3E8E4}.vendors .shead p{color:#C3B0B5}.vendors .eyebrow{color:var(--gold-soft)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:10px;margin-bottom:34px}
+.vgrid div{border:1px solid rgba(243,232,228,.16);border-radius:14px;padding:16px;display:flex;gap:10px;align-items:center;font-size:.98rem;transition:background .3s}
+.vgrid div:hover{background:rgba(243,232,228,.06)}
+.vgrid svg{flex:none;width:22px;height:22px;color:var(--gold-soft)}
+.soon{display:inline-block;font-size:.8rem;letter-spacing:.1em;padding:5px 12px;border-radius:999px;border:1px solid var(--gold-soft);color:var(--gold-soft);margin-bottom:16px}
+.v-cta{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.v-cta > div{border-radius:18px;padding:24px;background:rgba(243,232,228,.06);border:1px solid rgba(243,232,228,.12)}
+.v-cta h4{margin:0 0 6px;font-family:var(--serif);font-size:1.5rem;font-weight:500}
+.v-cta p{margin:0 0 16px;color:#C3B0B5;font-weight:300}
+@media (max-width:760px){.v-cta{grid-template-columns:1fr}}
+
+/* ---------- add-ons ---------- */
+.addons{margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 30px}
+.addons h4{margin:0 0 4px;font-family:var(--serif);font-size:1.7rem;font-weight:500}
+.addons > p{margin:0 0 18px;color:var(--ink-soft);font-weight:300}
+.addon-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px 26px;list-style:none;margin:0;padding:0}
+.addon-list li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-weight:300}
+.addon-list li em{font-style:normal;color:var(--wine);font-weight:500;white-space:nowrap;font-size:.92rem}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -230,7 +341,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Pvblicly Weddings by Ian Rebuta"><b>Pvblicly</b><span>weddings</span><small>by Ian Rebuta</small></a>
-    <nav><a href="#themes">Themes</a><a href="#features">Inclusions</a><a href="#packages">Packages</a><a href="#faq">FAQ</a><a class="cta" href="#contact">Book a call</a></nav>
+    <nav><a href="#themes">Websites</a><a href="#tools">Planning tools</a><a href="#registry">Registry</a><a href="#paper">Invites</a><a href="#vendors">Vendors</a><a href="#packages">Packages</a><a class="cta" href="#contact">Book a call</a></nav>
   </div>
 </header>
 
@@ -241,7 +352,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div>
         <p class="eyebrow rv">Pvblicly Weddings by Ian Rebuta</p>
         <h1 class="rv d1">Invitations your guests <em>open</em> like a love letter.</h1>
-        <p class="lead rv d2">Cinematic wedding websites with an envelope you break open, a story you scroll through, and every detail your guests need, all in one link.</p>
+        <p class="lead rv d2">Cinematic wedding websites, free planning tools, a gift registry and matching stationery. Your wedding and everything in between, all in one place.</p>
         <div class="btns rv d2"><a class="btn wine" href="#themes">See the themes</a><a class="btn line" href="#packages">View packages</a></div>
         <div class="hero-meta rv d2"><div><b id="themeCount">2</b>signature themes</div><div><b>1</b>link to share</div><div><b id="fromPrice">₱1,999</b>starting price</div></div>
       </div>
@@ -254,6 +365,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
 
+  <section class="hub" id="start">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Your wedding, all in one place</p><h2 class="rv d1">Everything in between</h2></div>
+        <p class="rv d1">Your website, your planning, your gifts and your paper, designed together so every piece feels like the two of you.</p>
+      </div>
+      <div class="hub-grid" id="hubGrid"></div>
+    </div>
+  </section>
+
   <section id="themes">
     <div class="wrap">
       <div class="shead">
@@ -261,6 +382,98 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="rv d1">Each theme is a complete wedding website. Tap "View live demo" to open it exactly as your guests would.</p>
       </div>
       <div id="themeList"></div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Free planning tools</p><h2 class="rv d1">Plan it all, right here</h2></div>
+        <p class="rv d1">A checklist, a budget planner and a guest list, free to use. Everything you enter stays saved on your own phone or computer.</p>
+      </div>
+      <div class="tools-box rv">
+        <div class="tabs" role="tablist" aria-label="Planning tools">
+          <button role="tab" aria-selected="true" aria-controls="p-check" id="t-check">Checklist</button>
+          <button role="tab" aria-selected="false" aria-controls="p-budget" id="t-budget">Budget planner</button>
+          <button role="tab" aria-selected="false" aria-controls="p-guests" id="t-guests">Guest list</button>
+        </div>
+        <div class="panel" id="p-check" role="tabpanel" aria-labelledby="t-check">
+          <div class="tool-top">
+            <label>Your wedding date<input type="date" class="field" id="wDate"></label>
+            <div class="big-stat" id="daysLeft">—<small>days to go</small></div>
+            <div class="big-stat" id="doneStat">0%<small>of tasks done</small></div>
+          </div>
+          <div class="bar"><i id="checkBar" style="width:0%"></i></div>
+          <div class="phases" id="phases"></div>
+          <p class="note-local">Saved on this device only. Add your date and the phase you're in now gets highlighted.</p>
+        </div>
+        <div class="panel" id="p-budget" role="tabpanel" aria-labelledby="t-budget" hidden>
+          <div class="tool-top">
+            <label>Total budget (₱)<input type="number" min="0" step="1000" inputmode="numeric" class="field" id="bTotal" placeholder="e.g. 300000"></label>
+            <div class="big-stat" id="bSpent">₱0<small>spent so far</small></div>
+            <div class="big-stat" id="bLeft">₱0<small>left to spend</small></div>
+          </div>
+          <div class="bar"><i id="budgetBar" style="width:0%"></i></div>
+          <div class="budget-wrap"><table class="budget-table"><thead><tr><th>Category</th><th>Suggested</th><th>Plan (₱)</th><th>Spent (₱)</th></tr></thead><tbody id="bRows"></tbody></table></div>
+          <p class="note-local">The suggested split is a common starting point, not a rule. Change the plan for any category to match your priorities.</p>
+        </div>
+        <div class="panel" id="p-guests" role="tabpanel" aria-labelledby="t-guests" hidden>
+          <div class="guest-add">
+            <input class="field" id="gName" placeholder="Guest name" aria-label="Guest name">
+            <select class="field" id="gSide" aria-label="Side"><option>Bride</option><option>Groom</option><option>Both</option></select>
+            <button class="mini-btn" id="gAdd">Add guest</button>
+            <button class="mini-btn out" id="gExport">Download list</button>
+          </div>
+          <div class="counts" id="gCounts"></div>
+          <ul class="guests" id="gList"></ul>
+          <p class="note-local">Saved on this device only. "Download list" gives you a spreadsheet file you can share with your coordinator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="registry" style="background:var(--bg-2)">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow rv">Gift registry</p>
+        <h2 class="rv d1" style="font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;margin:0 0 18px">Gifts, made easy for your guests</h2>
+        <p class="rv d1" style="color:var(--ink-soft);font-weight:300;font-size:1.1rem;margin:0 0 26px">A registry page inside your wedding website, so guests who ask "what do you need?" get a beautiful answer.</p>
+        <ul class="rv d2" id="regList"></ul>
+        <a class="btn wine rv d2" href="#contact">Add a registry</a>
+      </div>
+      <div class="rv d1"><div class="reg-card" aria-label="Sample registry page">
+        <h4>Our Gift Registry</h4><p class="s">Your presence is our greatest gift</p>
+        <div class="reg-row"><div class="qr" id="qr"></div><div><b>Cash gift</b><small>Scan with GCash or your banking app</small></div></div>
+        <div class="reg-row fund" style="display:block"><b>Honeymoon fund</b><div class="bar"><i style="width:62%"></i></div><small>62% of our goal</small></div>
+        <div class="wish"><span>Rice cooker</span><em>Gifted</em></div>
+        <div class="wish"><span>Dinnerware set for 8</span><em class="open">Available</em></div>
+        <div class="wish"><span>Coffee maker</span><em class="open">Available</em></div>
+        <span class="sample-tag">SAMPLE REGISTRY PAGE</span>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="paper">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Invites &amp; paper</p><h2 class="rv d1">Stationery that matches your website</h2></div>
+        <p class="rv d1">Digital and print-ready pieces designed in the same theme as your wedding website, so everything from the save-the-date to the thank-you card feels like one story.</p>
+      </div>
+      <div class="paper-grid" id="paperGrid"></div>
+    </div>
+  </section>
+
+  <section id="vendors" class="vendors">
+    <div class="wrap">
+      <div class="shead">
+        <div><p class="eyebrow rv">Vendors</p><h2 class="rv d1">Build your wedding team</h2></div>
+        <div><span class="soon rv">COMING SOON</span><p class="rv d1">A directory of trusted wedding suppliers in Bohol and nearby, from venues and photographers to hair and makeup.</p></div>
+      </div>
+      <div class="vgrid rv" id="vGrid"></div>
+      <div class="v-cta">
+        <div class="rv"><h4>Planning a wedding?</h4><p>Tell me what you still need and I'll point you to suppliers that fit your style and budget.</p><a class="btn gold" href="#contact">Ask for recommendations</a></div>
+        <div class="rv d1"><h4>Are you a wedding supplier?</h4><p>Get listed in the directory when it launches and reach couples who are actively planning.</p><a class="btn ghost" href="#contact">Join the directory</a></div>
+      </div>
     </div>
   </section>
 
@@ -296,6 +509,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="rv d1">Start with a ready theme, or go all the way to a design that exists only for your wedding.</p>
       </div>
       <div class="packs" id="packList"></div>
+      <div class="addons rv"><h4>Add-ons</h4><p>Pair any package with these, priced to your needs.</p><ul class="addon-list" id="addonList"></ul></div>
     </div>
   </section>
 
@@ -387,6 +601,58 @@ const FEATURES = [
   ["phone","Made for phones","Designed first for the screens your guests actually use."]
 ];
 
+const HUB = [
+  ["phone","Wedding website","Cinematic themes with RSVP, countdown, entourage and more.","#themes","See themes"],
+  ["list","Planning tools","Free checklist, budget planner and guest list.","#tools","Start planning"],
+  ["gift","Gift registry","Cash gifts, a honeymoon fund and a wishlist in one page.","#registry","See registry"],
+  ["mail","Invites & paper","Save-the-dates, invitations and stationery that match.","#paper","See stationery"],
+  ["people","Vendors","Find your wedding team in Bohol and nearby.","#vendors","Coming soon"]
+];
+
+const CHECKLIST = [
+  { phase:"12 months or more", from:12, tasks:["Set your total budget","Pick your date and ceremony venue","Draft your first guest list","Book your reception venue","Choose your wedding website theme"] },
+  { phase:"9 to 12 months", from:9, tasks:["Book your photographer and videographer","Book your coordinator","Choose your principal sponsors","Start looking for your gown and barong","Book your caterer"] },
+  { phase:"6 to 9 months", from:6, tasks:["Send save-the-dates","Launch your wedding website","Book hair and makeup","Book your florist or stylist","Book lights, sounds and music"] },
+  { phase:"4 to 6 months", from:4, tasks:["Order invitations and stationery","Finalize your entourage","Start your marriage license requirements","Complete any required pre-marriage seminar","Plan your gift registry"] },
+  { phase:"2 to 3 months", from:2, tasks:["Send your invitations","Have your final fittings","Plan the program and choose your host","Order your cake","Arrange transportation"] },
+  { phase:"1 month", from:1, tasks:["Follow up on RSVPs","Finalize your seating plan","Confirm every supplier and payment","Write your vows","Update your website with final details"] },
+  { phase:"The week of", from:0, tasks:["Give the final headcount to your caterer","Prepare envelopes for supplier balances","Pack for the wedding day","Rest, and enjoy every moment"] }
+];
+
+const BUDGET = [
+  ["Venue & catering",45],["Photo & video",12],["Attire & beauty",10],["Flowers & styling",8],["Music & entertainment",5],
+  ["Rings",5],["Invitations & website",3],["Cake",2],["Transportation",2],["Extra & emergencies",8]
+];
+
+const REGISTRY = [
+  ["gift","Cash gifts by QR","Guests scan your GCash or bank QR right from your website."],
+  ["heart","Honeymoon or home fund","Share a goal and a progress bar that you can update as gifts arrive."],
+  ["list","Wishlist from any store","List the items you'd love, with links, and mark them as gifted."],
+  ["mail","Gift note in your words","A gentle message about gifts, written exactly how you want to say it."]
+];
+
+const PAPER = [
+  ["Digital save-the-date","Animated, shareable on Messenger and Viber","std"],
+  ["Wedding invitation","Print-ready, with a QR code to your website","inv"],
+  ["RSVP card","Matching reply card or QR to your form","rsvp"],
+  ["Ceremony program","The order of the day, beautifully set","prog"],
+  ["Menu cards","For each table or each place setting","menu"],
+  ["Place cards & table numbers","Guide every guest to their seat","place"],
+  ["Welcome signage","Entrance signs, seating charts and more","sign"],
+  ["Thank-you cards","Digital or printed, to send after the day","ty"]
+];
+
+const VENDORS = [
+  ["pin","Venues"],["photo","Photographers"],["photo","Videographers"],["dinner","Catering"],["dress","Hair & makeup"],
+  ["dress","Gowns & barong"],["heart","Florists & stylists"],["cake","Cakes"],["music","Lights & sounds"],["music","Bands & singers"],
+  ["people","Hosts"],["list","Coordinators"],["seal","Rentals"],["pin","Transportation"]
+];
+
+const ADDONS = [
+  ["Gift registry page","quoted"],["Digital save-the-date","quoted"],["Printed invitations with QR","quoted"],
+  ["Matching stationery suite","quoted"],["Own domain name","quoted"],["Extra language version","quoted"]
+];
+
 const PACKAGES = [
   { name: "Essential", price: BRAND.fromPrice, note: "starting price", tag: "",
     items: ["Your choice of any ready theme",
@@ -439,6 +705,8 @@ const ICON = {
   music:'<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
   phone:'<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>'
 };
+ICON.dinner = '<circle cx="12.5" cy="12" r="5"/><path d="M4 4v5a1.5 1.5 0 0 0 3 0V4M5.5 9v11M20.5 4c-2 1.5-2 6 0 7.5V20"/>';
+ICON.cake = '<path d="M5 12h14v8H5zM7 12V9h10v3M12 9V6M5 16c2 1.5 4 1.5 7 0s5-1.5 7 0"/><path d="M12 3.5v.5"/>';
 const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
 
 const SPRIG = '<svg class="sprig" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 112 C50 86 100 60 194 14"/><path d="M40 92c-6-14-2-26 10-32 4 14 0 26-10 32z" fill="currentColor" fill-opacity=".3"/><path d="M78 72c-4-15 2-27 14-31 2 15-4 27-14 31z" fill="currentColor" fill-opacity=".3"/><path d="M118 52c-2-15 6-26 18-28 0 15-8 26-18 28z" fill="currentColor" fill-opacity=".3"/><circle cx="165" cy="28" r="6"/><circle cx="178" cy="22" r="5"/></svg>';
@@ -478,7 +746,7 @@ function fill(scope=document){
 
 $("#themeCount").textContent = THEMES.filter(t=>t.demo).length;
 $("#fromPrice").textContent = BRAND.fromPrice;
-const mq = ["Envelope openings","Live countdown","Love story timeline","Venues & maps","Entourage","RSVP","Background music","Photo album","Made for phones","One link for every guest"];
+const mq = ["Wedding websites","Planning checklist","Budget planner","Guest list","Gift registry","Save-the-dates","Invitations & stationery","Vendor directory","RSVP","One link for every guest"];
 $("#marquee").innerHTML = [...mq,...mq].map(t=>`<span>${t}</span>`).join("");
 
 $("#themeList").innerHTML = THEMES.map((t,i)=>`
@@ -516,6 +784,104 @@ if(BRAND.messenger) cb.push(`<a class="btn ghost" href="${BRAND.messenger}" targ
 if(BRAND.email) cb.push(`<a class="btn ghost" href="mailto:${BRAND.email}">Email me</a>`);
 $("#contactBtns").innerHTML = cb.join("");
 $("#footL").textContent = `© ${new Date().getFullYear()} ${BRAND.name} Weddings by ${BRAND.designer}`;
+
+
+/* ---------- hub, registry, paper, vendors, add-ons ---------- */
+$("#hubGrid").innerHTML = HUB.map(([k,t,d,h,c],i)=>`<a class="rv ${i?'d'+Math.min(i,2):''}" href="${h}">${svg(k)}<b>${t}</b><span>${d}</span><em>${c}</em></a>`).join("");
+$("#regList").innerHTML = REGISTRY.map(([k,t,d])=>`<li>${svg(k)}<div><b>${t}</b><span>${d}</span></div></li>`).join("");
+(()=>{ const on="111111101100100111101000101101111101011000110100110101101101001110010111111101101";
+  $("#qr").innerHTML=[...on].map(b=>`<i class="${b==='1'?'':'o'}"></i>`).join(""); })();
+const PAPER_ART = {
+  std:'<div class="sheet" style="width:62%;height:70%;font-size:1.5rem;transform:rotate(-4deg)">Save<br>the date<i></i></div>',
+  inv:'<div class="sheet" style="width:46%;height:86%;font-size:1.3rem">E &amp; G<i></i><i></i><span style="width:18px;height:18px;background:#231B1F;opacity:.8;margin-top:4px"></span></div>',
+  rsvp:'<div class="sheet" style="width:66%;height:56%;font-size:1.2rem;transform:rotate(3deg)">Kindly reply<i></i></div>',
+  prog:'<div class="sheet" style="width:40%;height:88%;font-size:1rem">Program<i></i><i></i><i></i><i></i></div>',
+  menu:'<div class="sheet" style="width:34%;height:88%;font-size:1rem;transform:rotate(-3deg)">Menu<i></i><i></i><i></i></div>',
+  place:'<div class="sheet" style="width:44%;height:34%;font-size:1rem;transform:rotate(-6deg) translate(-20px,-14px)">Maria</div><div class="sheet" style="position:absolute;width:30%;height:44%;font-size:1.6rem;transform:rotate(5deg) translate(34px,10px)">12</div>',
+  sign:'<div class="sheet" style="width:50%;height:84%;font-size:1.3rem;border-top:6px solid #B48A45">Welcome<i></i></div>',
+  ty:'<div class="sheet" style="width:60%;height:62%;font-size:1.4rem;transform:rotate(-2deg)">Thank you<i></i></div>'
+};
+$("#paperGrid").innerHTML = PAPER.map(([t,d,a],i)=>`<div class="pcard rv ${i%4?'d'+Math.min(i%4,2):''}"><div class="art">${PAPER_ART[a]}</div><b>${t}</b><span>${d}</span></div>`).join("");
+$("#vGrid").innerHTML = VENDORS.map(([k,t])=>`<div>${svg(k)}${t}</div>`).join("");
+$("#addonList").innerHTML = ADDONS.map(([t,p])=>`<li>${t}<em>${p==="quoted"?"Quoted on request":p}</em></li>`).join("");
+
+/* ---------- planning tools (saved in this browser only) ---------- */
+const store = {
+  get(k,d){ try{ const v=localStorage.getItem("pvw-"+k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },
+  set(k,v){ try{ localStorage.setItem("pvw-"+k, JSON.stringify(v)); }catch(e){} }
+};
+const peso = n => "₱" + Math.round(n||0).toLocaleString("en-PH");
+
+// tabs
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+tabs.forEach(t=>t.addEventListener("click",()=>{
+  tabs.forEach(x=>{ const on=x===t; x.setAttribute("aria-selected",on); document.getElementById(x.getAttribute("aria-controls")).hidden=!on; });
+}));
+
+// checklist
+let done = store.get("done",{});
+const wDate=$("#wDate"); wDate.value = store.get("date","");
+function renderChecklist(){
+  let months=null, days=null;
+  if(wDate.value){ const d=new Date(wDate.value+"T00:00:00"); days=Math.ceil((d-new Date())/86400000); months=days/30.4; }
+  $("#daysLeft").innerHTML = (days==null?"—":Math.max(0,days).toLocaleString())+"<small>days to go</small>";
+  let nowIdx=-1;
+  if(months!=null){ nowIdx = CHECKLIST.findIndex(p=> months>=p.from); if(nowIdx<0) nowIdx=CHECKLIST.length-1; }
+  $("#phases").innerHTML = CHECKLIST.map((p,pi)=>{
+    const n=p.tasks.filter((_,ti)=>done[pi+"-"+ti]).length;
+    return `<div class="phase ${pi===nowIdx?'now':''}"><h4>${p.phase}<small>${pi===nowIdx?'You are here · ':''}${n}/${p.tasks.length}</small></h4>
+      ${p.tasks.map((t,ti)=>`<label class="task"><input type="checkbox" data-k="${pi}-${ti}" ${done[pi+"-"+ti]?"checked":""}><span>${t}</span></label>`).join("")}</div>`;
+  }).join("");
+  const total=CHECKLIST.reduce((a,p)=>a+p.tasks.length,0), n=Object.values(done).filter(Boolean).length;
+  const pct=Math.round(n/total*100); $("#doneStat").innerHTML=pct+"%<small>of tasks done</small>"; $("#checkBar").style.width=pct+"%";
+}
+$("#phases").addEventListener("change",e=>{ if(e.target.dataset.k){ done[e.target.dataset.k]=e.target.checked; store.set("done",done); renderChecklist(); } });
+wDate.addEventListener("change",()=>{ store.set("date",wDate.value); renderChecklist(); });
+renderChecklist();
+
+// budget
+let bud = store.get("budget",{ total:"", plan:{}, spent:{} });
+$("#bTotal").value = bud.total;
+function renderBudget(){
+  const total=+bud.total||0;
+  $("#bRows").innerHTML = BUDGET.map(([c,pc],i)=>{
+    const sug=total*pc/100, plan=bud.plan[i]!==undefined&&bud.plan[i]!==""?+bud.plan[i]:sug, sp=+bud.spent[i]||0;
+    return `<tr><td>${c}</td><td class="n">${pc}% · ${peso(sug)}</td>
+      <td><input class="field" type="number" min="0" inputmode="numeric" data-t="plan" data-i="${i}" value="${bud.plan[i]??""}" placeholder="${Math.round(sug)}" aria-label="${c} plan"></td>
+      <td><input class="field ${sp>plan&&plan>0?'over':''}" type="number" min="0" inputmode="numeric" data-t="spent" data-i="${i}" value="${bud.spent[i]??""}" placeholder="0" aria-label="${c} spent"></td></tr>`;
+  }).join("");
+  updateBudgetStats();
+}
+function updateBudgetStats(){
+  const total=+bud.total||0, spent=Object.values(bud.spent).reduce((a,v)=>a+(+v||0),0);
+  $("#bSpent").innerHTML=peso(spent)+"<small>spent so far</small>";
+  $("#bLeft").innerHTML=`<span class="${total&&spent>total?'over':''}">${peso(total-spent)}</span><small>left to spend</small>`;
+  $("#budgetBar").style.width=(total?Math.min(100,spent/total*100):0)+"%";
+}
+$("#bTotal").addEventListener("input",e=>{ bud.total=e.target.value; store.set("budget",bud); renderBudget(); });
+$("#bRows").addEventListener("input",e=>{ const t=e.target.dataset.t; if(!t) return; bud[t][e.target.dataset.i]=e.target.value; store.set("budget",bud); updateBudgetStats(); });
+$("#bRows").addEventListener("change",()=>renderBudget());
+renderBudget();
+
+// guest list
+let guests = store.get("guests",[]);
+function renderGuests(){
+  const c = s => guests.filter(g=>g.rsvp===s).length;
+  $("#gCounts").innerHTML = `<span>${guests.length} guests</span><span>${c("Attending")} attending</span><span>${c("Pending")} pending</span><span>${c("Declined")} declined</span><span>Bride ${guests.filter(g=>g.side==="Bride").length} · Groom ${guests.filter(g=>g.side==="Groom").length} · Both ${guests.filter(g=>g.side==="Both").length}</span>`;
+  $("#gList").innerHTML = guests.length ? guests.map((g,i)=>`<li><span>${g.name.replace(/</g,"&lt;")}</span><small>${g.side}</small>
+    <select class="field" data-i="${i}" aria-label="RSVP for ${g.name.replace(/"/g,"")}">${["Pending","Attending","Declined"].map(o=>`<option ${o===g.rsvp?"selected":""}>${o}</option>`).join("")}</select>
+    <button data-del="${i}" aria-label="Remove ${g.name.replace(/"/g,"")}">×</button></li>`).join("") : `<li class="empty">No guests yet. Add your first one above.</li>`;
+}
+function addGuest(){ const n=$("#gName").value.trim(); if(!n) return; guests.push({name:n,side:$("#gSide").value,rsvp:"Pending"}); store.set("guests",guests); $("#gName").value=""; $("#gName").focus(); renderGuests(); }
+$("#gAdd").addEventListener("click",addGuest);
+$("#gName").addEventListener("keydown",e=>{ if(e.key==="Enter") addGuest(); });
+$("#gList").addEventListener("change",e=>{ if(e.target.dataset.i){ guests[e.target.dataset.i].rsvp=e.target.value; store.set("guests",guests); renderGuests(); } });
+$("#gList").addEventListener("click",e=>{ const d=e.target.dataset.del; if(d!==undefined){ guests.splice(+d,1); store.set("guests",guests); renderGuests(); } });
+$("#gExport").addEventListener("click",()=>{
+  const rows=[["Name","Side","RSVP"],...guests.map(g=>[g.name,g.side,g.rsvp])].map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([rows],{type:"text/csv"})); a.download="guest-list.csv"; document.body.appendChild(a); a.click(); a.remove();
+});
+renderGuests();
 
 fill();
 
